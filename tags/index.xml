@@ -1,1 +1,117 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Tags on 0kxwizard</title><link>https://kwesilarry1.github.io/tags/</link><description>Recent content in Tags on 0kxwizard</description><generator>Hugo -- 0.131.0</generator><language>en-us</language><lastBuildDate>Wed, 14 May 2025 07:17:25 +0000</lastBuildDate><atom:link href="https://kwesilarry1.github.io/tags/index.xml" rel="self" type="application/rss+xml"/><item><title>Automation</title><link>https://kwesilarry1.github.io/tags/automation/</link><pubDate>Wed, 14 May 2025 07:17:25 +0000</pubDate><guid>https://kwesilarry1.github.io/tags/automation/</guid><description/></item><item><title>Scripting</title><link>https://kwesilarry1.github.io/tags/scripting/</link><pubDate>Wed, 14 May 2025 07:17:25 +0000</pubDate><guid>https://kwesilarry1.github.io/tags/scripting/</guid><description/></item><item><title>Bug Bounty</title><link>https://kwesilarry1.github.io/tags/bug-bounty/</link><pubDate>Tue, 13 May 2025 12:02:52 +0000</pubDate><guid>https://kwesilarry1.github.io/tags/bug-bounty/</guid><description/></item><item><title>Information Gathering</title><link>https://kwesilarry1.github.io/tags/information-gathering/</link><pubDate>Tue, 13 May 2025 12:02:52 +0000</pubDate><guid>https://kwesilarry1.github.io/tags/information-gathering/</guid><description/></item><item><title>Reconnaissance</title><link>https://kwesilarry1.github.io/tags/reconnaissance/</link><pubDate>Tue, 13 May 2025 12:02:52 +0000</pubDate><guid>https://kwesilarry1.github.io/tags/reconnaissance/</guid><description/></item><item><title>WebHacking</title><link>https://kwesilarry1.github.io/tags/webhacking/</link><pubDate>Tue, 13 May 2025 12:02:52 +0000</pubDate><guid>https://kwesilarry1.github.io/tags/webhacking/</guid><description/></item><item><title>Home Lab</title><link>https://kwesilarry1.github.io/tags/home-lab/</link><pubDate>Thu, 10 Apr 2025 00:00:00 +0000</pubDate><guid>https://kwesilarry1.github.io/tags/home-lab/</guid><description/></item><item><title>Metasploitable</title><link>https://kwesilarry1.github.io/tags/metasploitable/</link><pubDate>Thu, 10 Apr 2025 00:00:00 +0000</pubDate><guid>https://kwesilarry1.github.io/tags/metasploitable/</guid><description/></item><item><title>WAPT</title><link>https://kwesilarry1.github.io/tags/wapt/</link><pubDate>Thu, 10 Apr 2025 00:00:00 +0000</pubDate><guid>https://kwesilarry1.github.io/tags/wapt/</guid><description/></item><item><title>Web Security</title><link>https://kwesilarry1.github.io/tags/web-security/</link><pubDate>Thu, 10 Apr 2025 00:00:00 +0000</pubDate><guid>https://kwesilarry1.github.io/tags/web-security/</guid><description/></item><item><title>Powershell Scripting</title><link>https://kwesilarry1.github.io/tags/powershell-scripting/</link><pubDate>Tue, 01 Apr 2025 19:17:31 +0000</pubDate><guid>https://kwesilarry1.github.io/tags/powershell-scripting/</guid><description/></item><item><title>Reverse Shell</title><link>https://kwesilarry1.github.io/tags/reverse-shell/</link><pubDate>Tue, 01 Apr 2025 19:17:31 +0000</pubDate><guid>https://kwesilarry1.github.io/tags/reverse-shell/</guid><description/></item><item><title>Ctf</title><link>https://kwesilarry1.github.io/tags/ctf/</link><pubDate>Sun, 30 Mar 2025 00:00:00 +0000</pubDate><guid>https://kwesilarry1.github.io/tags/ctf/</guid><description/></item><item><title>THM</title><link>https://kwesilarry1.github.io/tags/thm/</link><pubDate>Sun, 30 Mar 2025 00:00:00 +0000</pubDate><guid>https://kwesilarry1.github.io/tags/thm/</guid><description/></item><item><title>TryHackMe</title><link>https://kwesilarry1.github.io/tags/tryhackme/</link><pubDate>Sun, 30 Mar 2025 00:00:00 +0000</pubDate><guid>https://kwesilarry1.github.io/tags/tryhackme/</guid><description/></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tags on 0kxwizard</title>
+    <link>http://localhost:1313/tags/</link>
+    <description>Recent content in Tags on 0kxwizard</description>
+    <generator>Hugo -- 0.131.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 14 May 2025 07:17:25 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Automation</title>
+      <link>http://localhost:1313/tags/automation/</link>
+      <pubDate>Wed, 14 May 2025 07:17:25 +0000</pubDate>
+      <guid>http://localhost:1313/tags/automation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Scripting</title>
+      <link>http://localhost:1313/tags/scripting/</link>
+      <pubDate>Wed, 14 May 2025 07:17:25 +0000</pubDate>
+      <guid>http://localhost:1313/tags/scripting/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bug Bounty</title>
+      <link>http://localhost:1313/tags/bug-bounty/</link>
+      <pubDate>Tue, 13 May 2025 12:02:52 +0000</pubDate>
+      <guid>http://localhost:1313/tags/bug-bounty/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Information Gathering</title>
+      <link>http://localhost:1313/tags/information-gathering/</link>
+      <pubDate>Tue, 13 May 2025 12:02:52 +0000</pubDate>
+      <guid>http://localhost:1313/tags/information-gathering/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Reconnaissance</title>
+      <link>http://localhost:1313/tags/reconnaissance/</link>
+      <pubDate>Tue, 13 May 2025 12:02:52 +0000</pubDate>
+      <guid>http://localhost:1313/tags/reconnaissance/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>WebHacking</title>
+      <link>http://localhost:1313/tags/webhacking/</link>
+      <pubDate>Tue, 13 May 2025 12:02:52 +0000</pubDate>
+      <guid>http://localhost:1313/tags/webhacking/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Home Lab</title>
+      <link>http://localhost:1313/tags/home-lab/</link>
+      <pubDate>Thu, 10 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/home-lab/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Metasploitable</title>
+      <link>http://localhost:1313/tags/metasploitable/</link>
+      <pubDate>Thu, 10 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/metasploitable/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>WAPT</title>
+      <link>http://localhost:1313/tags/wapt/</link>
+      <pubDate>Thu, 10 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/wapt/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Web Security</title>
+      <link>http://localhost:1313/tags/web-security/</link>
+      <pubDate>Thu, 10 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/web-security/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Powershell Scripting</title>
+      <link>http://localhost:1313/tags/powershell-scripting/</link>
+      <pubDate>Tue, 01 Apr 2025 19:17:31 +0000</pubDate>
+      <guid>http://localhost:1313/tags/powershell-scripting/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Reverse Shell</title>
+      <link>http://localhost:1313/tags/reverse-shell/</link>
+      <pubDate>Tue, 01 Apr 2025 19:17:31 +0000</pubDate>
+      <guid>http://localhost:1313/tags/reverse-shell/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ctf</title>
+      <link>http://localhost:1313/tags/ctf/</link>
+      <pubDate>Sun, 30 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/ctf/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>THM</title>
+      <link>http://localhost:1313/tags/thm/</link>
+      <pubDate>Sun, 30 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/thm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>TryHackMe</title>
+      <link>http://localhost:1313/tags/tryhackme/</link>
+      <pubDate>Sun, 30 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/tryhackme/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

@@ -1,3 +1,28 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Projects on 0kxwizard</title><link>https://kwesilarry1.github.io/projects/</link><description>Recent content in Projects on 0kxwizard</description><generator>Hugo -- 0.131.0</generator><language>en-us</language><lastBuildDate>Wed, 14 May 2025 07:17:25 +0000</lastBuildDate><atom:link href="https://kwesilarry1.github.io/projects/index.xml" rel="self" type="application/rss+xml"/><item><title>Robots.txt Scrapper Tool</title><link>https://kwesilarry1.github.io/projects/robots_txt_scrapper/</link><pubDate>Wed, 14 May 2025 07:17:25 +0000</pubDate><guid>https://kwesilarry1.github.io/projects/robots_txt_scrapper/</guid><description>Description A tool written in python that fetches and analyzes the robots.txt file of a website and save the the results to a file for future use.
-Usgae python3 /path/to/file Link: https://github.com/kwesilarry1/Robot.txt-Scrapper</description></item><item><title>PowerShell File Transfer &amp; Stealth Execution: Upload, Run, and Evade Detection</title><link>https://kwesilarry1.github.io/projects/powershell_reverse_shell/</link><pubDate>Tue, 01 Apr 2025 19:17:31 +0000</pubDate><guid>https://kwesilarry1.github.io/projects/powershell_reverse_shell/</guid><description>Introduction My first project in my career? No. but my first blog on a project.
-During the weekends, one of my colleagues Melvin Awuku sent me a powershell script claiming that it can bypass Windows Defender and most basic anti-viruses and give us a reverse shell.sound great? isn&amp;rsquo;t it? who will not be happy to try such a powerful script since most Metasploit Payloads can&amp;rsquo;t bypass windows Defender. Though i planned to get some rest during the weekend but i rushed home with curiosity and turned on my laptop to test the script.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Projects on 0kxwizard</title>
+    <link>http://localhost:1313/projects/</link>
+    <description>Recent content in Projects on 0kxwizard</description>
+    <generator>Hugo -- 0.131.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 14 May 2025 07:17:25 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Robots.txt Scrapper Tool</title>
+      <link>http://localhost:1313/projects/robots_txt_scrapper/</link>
+      <pubDate>Wed, 14 May 2025 07:17:25 +0000</pubDate>
+      <guid>http://localhost:1313/projects/robots_txt_scrapper/</guid>
+      <description>Description A tool written in python that fetches and analyzes the robots.txt file of a website and save the the results to a file for future use.
+Usage python3 /path/to/file Link: https://github.com/kwesilarry1/Robot.txt-Scrapper</description>
+    </item>
+    <item>
+      <title>PowerShell File Transfer &amp; Stealth Execution: Upload, Run, and Evade Detection</title>
+      <link>http://localhost:1313/projects/powershell_reverse_shell/</link>
+      <pubDate>Tue, 01 Apr 2025 19:17:31 +0000</pubDate>
+      <guid>http://localhost:1313/projects/powershell_reverse_shell/</guid>
+      <description>Introduction My first project in my career? No. but my first blog on a project.
+During the weekends, one of my colleagues Melvin Awuku sent me a powershell script claiming that it can bypass Windows Defender and most basic anti-viruses and give us a reverse shell.sound great? isn&amp;rsquo;t it? who will not be happy to try such a powerful script since most Metasploit Payloads can&amp;rsquo;t bypass windows Defender. Though i planned to get some rest during the weekend but i rushed home with curiosity and turned on my laptop to test the script.</description>
+    </item>
+  </channel>
+</rss>
