@@ -9,11 +9,12 @@
     <lastBuildDate>Mon, 16 Jun 2025 10:37:11 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/websecurity/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>DVWA Vulnerabilities</title>
+      <title>Breaking the Damn Vulnerable Web App – Step by Step</title>
       <link>http://localhost:1313/writeups/dvwa/</link>
       <pubDate>Mon, 16 Jun 2025 10:37:11 +0000</pubDate>
       <guid>http://localhost:1313/writeups/dvwa/</guid>
-      <description>Introduction Hey Hackers,In this writeup i will take you through how to hack the Damn Vulnerable Web Application(DVWA).You can check this writeup (/how\ to\ set\ up\ metasploitable2.md/)on how to set the</description>
+      <description>Introduction Hey hackers, welcome back to my blog! In this write-up, I’ll walk you through how to hack the Damn Vulnerable Web Application (DVWA). If you haven’t set it up yet, feel free to check out my previous guide on How to Set Up a Metasploitable Lab—it covers everything you need to get DVWA running.
+DVWA offers three difficulty levels for each vulnerability, and in this post, we’ll explore all of them, one by one.</description>
     </item>
   </channel>
 </rss>
