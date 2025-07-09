@@ -1,7 +1,39 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Web Security on 0kxwizard</title><link>https://kwesilarry1.github.io/tags/web-security/</link><description>Recent content in Web Security on 0kxwizard</description><generator>Hugo -- 0.131.0</generator><language>en-us</language><lastBuildDate>Sat, 14 Jun 2025 17:13:16 +0000</lastBuildDate><atom:link href="https://kwesilarry1.github.io/tags/web-security/index.xml" rel="self" type="application/rss+xml"/><item><title>How I Hacked A Vulnerable Bank Application</title><link>https://kwesilarry1.github.io/writeups/vulnerable_bank/</link><pubDate>Sat, 14 Jun 2025 17:13:16 +0000</pubDate><guid>https://kwesilarry1.github.io/writeups/vulnerable_bank/</guid><description>Introduction Good day fellow hackers, welcome to my blog again. In this writeup i will take you through how i was able to exploit an intentional Vulnerable Bank Application by Ghost St. Badmus, One of the best Application Security Engineers in the industry.
-You can find the Lab here: Vulnerable Bank Application 🏦
-Authentication &amp;amp; Authorization Vulnerabilities SQL Injection in login The first thing we will see when we access the application is the Login/Register page,we will try logging in with a simple SQLI payload to see if the application is vulnerable to SQLI.</description></item><item><title>How to set up Metasploitable Lab for Web Hacking</title><link>https://kwesilarry1.github.io/writeups/how-to-set-up-metasploitable2/</link><pubDate>Thu, 10 Apr 2025 00:00:00 +0000</pubDate><guid>https://kwesilarry1.github.io/writeups/how-to-set-up-metasploitable2/</guid><description>Hey there! it&amp;rsquo;s been a while. In this write-up, I’ll be showing you how to set up your own metalsploitable lab for web application security and penetration testing.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Web Security on 0kxwizard</title>
+    <link>http://localhost:1313/tags/web-security/</link>
+    <description>Recent content in Web Security on 0kxwizard</description>
+    <generator>Hugo -- 0.131.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 14 Jun 2025 17:13:16 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/web-security/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How I Hacked A Vulnerable Bank Application</title>
+      <link>http://localhost:1313/writeups/vulnerable_bank/</link>
+      <pubDate>Sat, 14 Jun 2025 17:13:16 +0000</pubDate>
+      <guid>http://localhost:1313/writeups/vulnerable_bank/</guid>
+      <description>Introduction Good day fellow hackers, welcome to my blog again. In this writeup i will take you through how i was able to exploit an intentional Vulnerable Bank Application by Ghost St. Badmus, One of the best Application Security Engineers in the industry.
+You can find the Lab here: Vulnerable Bank Application 🏦 or vulnbank.org
+Authentication &amp;amp; Authorization Vulnerabilities SQL Injection in login The first thing we will see when we access the application is the Login/Register page,we will try logging in with a simple SQLI payload to see if the application is vulnerable to SQLI.</description>
+    </item>
+    <item>
+      <title>How to set up Metasploitable Lab for Web Hacking</title>
+      <link>http://localhost:1313/writeups/how-to-set-up-metasploitable2/</link>
+      <pubDate>Thu, 10 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/writeups/how-to-set-up-metasploitable2/</guid>
+      <description>Hey there! it&amp;rsquo;s been a while. In this write-up, I’ll be showing you how to set up your own metalsploitable lab for web application security and penetration testing.
 Downloading Metasploitable 2 First, go to google and search for metasploitable 2 and choose the one from sourceforge.net or visit the link provided below: (https://sourceforge.net/projects/metasploitable/). Click on Download and wait for some seconds for the zip file to download automatically.
-Setting Up Extract the ZIP file using your preferred ZIP extractor: Open virtualbox,click on New at the top, Enter: Enter the name of your machine, make sure the &amp;ldquo;Type&amp;rdquo; and &amp;ldquo;Version&amp;rdquo; is the same as the one in the image below.</description></item><item><title>THM: Stickershop CTF</title><link>https://kwesilarry1.github.io/writeups/stickershop/</link><pubDate>Sun, 30 Mar 2025 00:00:00 +0000</pubDate><guid>https://kwesilarry1.github.io/writeups/stickershop/</guid><description>Platform: TryHackMe Link: Stickershop Level: Easy To read the flag in this very simple room, we must take advantage of a Cross-Site Scripting vulnerability.
+Setting Up Extract the ZIP file using your preferred ZIP extractor: Open virtualbox,click on New at the top, Enter: Enter the name of your machine, make sure the &amp;ldquo;Type&amp;rdquo; and &amp;ldquo;Version&amp;rdquo; is the same as the one in the image below.</description>
+    </item>
+    <item>
+      <title>THM: Stickershop CTF</title>
+      <link>http://localhost:1313/writeups/stickershop/</link>
+      <pubDate>Sun, 30 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/writeups/stickershop/</guid>
+      <description>Platform: TryHackMe Link: Stickershop Level: Easy To read the flag in this very simple room, we must take advantage of a Cross-Site Scripting vulnerability.
 Scanning Using nmap to scan the target:
-nmap -sV -sC Target_IP -OG The_Sticker_Shop Results Starting Nmap 7.95 ( https://nmap.org ) at 2025-03-30 19:58 GMT Nmap scan report for 10.10.97.238 Host is up (0.17s latency). Not shown: 998 closed tcp ports (reset) PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 8.</description></item></channel></rss>
+nmap -sV -sC Target_IP -OG The_Sticker_Shop Results Starting Nmap 7.95 ( https://nmap.org ) at 2025-03-30 19:58 GMT Nmap scan report for 10.10.97.238 Host is up (0.17s latency). Not shown: 998 closed tcp ports (reset) PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 8.</description>
+    </item>
+  </channel>
+</rss>
