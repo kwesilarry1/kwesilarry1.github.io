@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Kwesi Larry (0kxwizard)</title><link>https://0kxwizard.github.io/</link><description>Recent content on Kwesi Larry (0kxwizard)</description><generator>Hugo -- 0.149.0</generator><language>en-us</language><lastBuildDate>Mon, 06 Oct 2025 08:02:52 +0000</lastBuildDate><atom:link href="https://0kxwizard.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>How I Hacked A Vulnerable Bank Application</title><link>https://0kxwizard.github.io/writeups/vulnerable_bank/</link><pubDate>Sat, 14 Jun 2025 07:49:03 +0000</pubDate><guid>https://0kxwizard.github.io/writeups/vulnerable_bank/</guid><description>&lt;h2 id="introduction"&gt;Introduction&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Kwesi Larry (0kxwizard)</title><link>https://kwesilarry1.github.io/</link><description>Recent content on Kwesi Larry (0kxwizard)</description><generator>Hugo -- 0.149.0</generator><language>en-us</language><lastBuildDate>Mon, 06 Oct 2025 08:02:52 +0000</lastBuildDate><atom:link href="https://kwesilarry1.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>How I Hacked A Vulnerable Bank Application</title><link>https://kwesilarry1.github.io/writeups/vulnerable_bank/</link><pubDate>Sat, 14 Jun 2025 07:49:03 +0000</pubDate><guid>https://kwesilarry1.github.io/writeups/vulnerable_bank/</guid><description>&lt;h2 id="introduction"&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;Good day fellow hackers, welcome to my blog again. In this writeup i
 will take you through how i was able to exploit an intentional
 Vulnerable Bank Application by &lt;a href="https://x.com/commando_skiipz?t=rPix1FAXa-vFamgkrxjjnQ&amp;amp;s=09"&gt;Ghost St.
@@ -13,16 +13,26 @@ One of the best Application Security Engineers in the industry.&lt;/p&gt;
 Login/Register page,we will try logging in with a simple SQLI payload to
 see if the application is vulnerable to SQLI. After using &lt;strong&gt;&amp;lsquo;or 1=1- -&lt;/strong&gt;
 as the username and &lt;strong&gt;pass&lt;/strong&gt; as password,we were logged in as the admin.
-&lt;img alt="Login_page" loading="lazy" src="https://0kxwizard.github.io/images/login_page.png"&gt;
-&lt;a href="https://0kxwizard.github.io/images/sqli.png"&gt;SQLI payload&lt;/a&gt;
-&lt;img alt="admin acess" loading="lazy" src="https://0kxwizard.github.io/images/admin_access.png"&gt;&lt;/p&gt;</description></item><item><title>WebHacking-Recon Techniques</title><link>https://0kxwizard.github.io/writeups/web_recon/</link><pubDate>Tue, 13 May 2025 11:10:54 +0000</pubDate><guid>https://0kxwizard.github.io/writeups/web_recon/</guid><description>&lt;h2 id="introduction"&gt;Introduction&lt;/h2&gt;
+&lt;img alt="Login_page" loading="lazy" src="https://kwesilarry1.github.io/images/login_page.png"&gt;
+&lt;a href="https://kwesilarry1.github.io/images/sqli.png"&gt;SQLI payload&lt;/a&gt;
+&lt;img alt="admin acess" loading="lazy" src="https://kwesilarry1.github.io/images/admin_access.png"&gt;&lt;/p&gt;</description></item><item><title>WebHacking-Recon Techniques</title><link>https://kwesilarry1.github.io/writeups/web_recon/</link><pubDate>Tue, 13 May 2025 11:10:54 +0000</pubDate><guid>https://kwesilarry1.github.io/writeups/web_recon/</guid><description>&lt;h2 id="introduction"&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;Hello Hackers, Hope you&amp;rsquo;ve grinding hard and ethically? It&amp;rsquo;s been a
 while, In this writeup i will share some Reconnaissance techniques that
 will help you to succeed in your bug bounty or Web Application Hacking.
 As we all know Recon is a crucial stage in hacking, Exploiting a target
 system is quite easy if you know much about the system and how it
 works(hence my philosophy 80% recon, 20% exploitation).Enough talking,
-Let&amp;rsquo;s get our hands dirty!!&lt;/p&gt;</description></item><item><title>How to set up Metasploitable Lab for Web Hacking</title><link>https://0kxwizard.github.io/writeups/metasploitable/</link><pubDate>Thu, 10 Apr 2025 10:58:50 +0000</pubDate><guid>https://0kxwizard.github.io/writeups/metasploitable/</guid><description>&lt;p&gt;Hey there! it&amp;rsquo;s been a while. In this write-up, I&amp;rsquo;ll be showing you how
+Let&amp;rsquo;s get our hands dirty!!&lt;/p&gt;</description></item><item><title>Robots.txt Scrapper Tool</title><link>https://kwesilarry1.github.io/projects/robots_txt_scrapper/</link><pubDate>Tue, 06 May 2025 11:39:41 +0000</pubDate><guid>https://kwesilarry1.github.io/projects/robots_txt_scrapper/</guid><description>&lt;h3 id="description"&gt;Description&lt;/h3&gt;
+&lt;p&gt;A tool written in python that fetches and analyzes the robots.txt file
+of a website and save the the results to a file for future use.&lt;/p&gt;
+&lt;h3 id="usage"&gt;Usage[#]&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;python3 /path/to/file
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img alt="robots.txt" loading="lazy" src="https://kwesilarry1.github.io/images/robots.png"&gt; &lt;strong&gt;Link:&lt;/strong&gt;
+&lt;a href="https://github.com/kwesilarry1/Robot.txt-Scrapper"&gt;https://github.com/kwesilarry1/Robot.txt-Scrapper&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://kwesilarry1.github.io/tags/automation/"&gt;Automation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://kwesilarry1.github.io/tags/scripting/"&gt;Scripting&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>How to set up Metasploitable Lab for Web Hacking</title><link>https://kwesilarry1.github.io/writeups/metasploitable/</link><pubDate>Thu, 10 Apr 2025 10:58:50 +0000</pubDate><guid>https://kwesilarry1.github.io/writeups/metasploitable/</guid><description>&lt;p&gt;Hey there! it&amp;rsquo;s been a while. In this write-up, I&amp;rsquo;ll be showing you how
 to set up your own metalsploitable lab for web application security and
 penetration testing.&lt;/p&gt;
 &lt;hr&gt;
@@ -34,27 +44,27 @@ from &lt;em&gt;&lt;strong&gt;sourceforge.net&lt;/strong&gt;&lt;/em&gt; or visit 
 automatically.&lt;/p&gt;
 &lt;h3 id="setting-up"&gt;Setting Up&lt;/h3&gt;
 &lt;p&gt;Extract the ZIP file using your preferred ZIP extractor:
-&lt;img alt="Extracting" loading="lazy" src="https://0kxwizard.github.io/images/extract.png"&gt; Open virtualbox,click
-on New at the top, Enter: &lt;img alt="new\nmachine" loading="lazy" src="https://0kxwizard.github.io/images/create.png"&gt; Enter the name of your
+&lt;img alt="Extracting" loading="lazy" src="https://kwesilarry1.github.io/images/extract.png"&gt; Open virtualbox,click
+on New at the top, Enter: &lt;img alt="new\nmachine" loading="lazy" src="https://kwesilarry1.github.io/images/create.png"&gt; Enter the name of your
 machine, make sure the &amp;ldquo;Type&amp;rdquo; and &amp;ldquo;Version&amp;rdquo; is the same as the one in
-the image below.Leave the &amp;ldquo;ISO Image&amp;rdquo; field and click on next: &lt;img alt="setting\nup" loading="lazy" src="https://0kxwizard.github.io/images/settings.png"&gt; Choose your preferred RAM and
+the image below.Leave the &amp;ldquo;ISO Image&amp;rdquo; field and click on next: &lt;img alt="setting\nup" loading="lazy" src="https://kwesilarry1.github.io/images/settings.png"&gt; Choose your preferred RAM and
 CPU size to allocate to the machine and click on next,i will use the
 default size since metasploitable doesn&amp;rsquo;t require much space and
-resources. &lt;img alt="hardware" loading="lazy" src="https://0kxwizard.github.io/images/hardware.png"&gt; Select &amp;ldquo;Use
+resources. &lt;img alt="hardware" loading="lazy" src="https://kwesilarry1.github.io/images/hardware.png"&gt; Select &amp;ldquo;Use
 an Existing Virtual Hard Disk File&amp;rdquo; and click on the folder icon:
-&lt;img alt="selecting disk" loading="lazy" src="https://0kxwizard.github.io/images/metasploitable1.png"&gt; Click on
+&lt;img alt="selecting disk" loading="lazy" src="https://kwesilarry1.github.io/images/metasploitable1.png"&gt; Click on
 &amp;ldquo;Add&amp;rdquo;, locate where you extracted the zip file and select
 &amp;ldquo;Metasploitable.vmdk&amp;rdquo;.Click on Choose and finally next:
-&lt;img alt="VMDK" loading="lazy" src="https://0kxwizard.github.io/images/metasploitable2.png"&gt; Now click on
+&lt;img alt="VMDK" loading="lazy" src="https://kwesilarry1.github.io/images/metasploitable2.png"&gt; Now click on
 &amp;ldquo;Start&amp;rdquo; to boot the machine and wait for some seconds,the default
 username and password is &lt;strong&gt;msfadmin&lt;/strong&gt;:
-&lt;img alt="start" loading="lazy" src="https://0kxwizard.github.io/images/start.png"&gt; Type &lt;em&gt;&lt;strong&gt;ifconfig&lt;/strong&gt;&lt;/em&gt; to check
-the machine&amp;rsquo;s IP Address &lt;img alt="ip" loading="lazy" src="https://0kxwizard.github.io/images/ipp.png"&gt; Open
+&lt;img alt="start" loading="lazy" src="https://kwesilarry1.github.io/images/start.png"&gt; Type &lt;em&gt;&lt;strong&gt;ifconfig&lt;/strong&gt;&lt;/em&gt; to check
+the machine&amp;rsquo;s IP Address &lt;img alt="ip" loading="lazy" src="https://kwesilarry1.github.io/images/ipp.png"&gt; Open
 your browser, paste the metasploitable ip in the search bar and you
 should see the list of vulnerable servers been hosted on metasploitable
 you can get your hands dirty with.
-&lt;img alt="servers" loading="lazy" src="https://0kxwizard.github.io/images/servers.png"&gt; I will do writeups on
-how to hack some of these servers.&lt;/p&gt;</description></item><item><title>THM: Stickershop CTF</title><link>https://0kxwizard.github.io/writeups/thm_sticker_shop/</link><pubDate>Sun, 30 Mar 2025 10:48:21 +0000</pubDate><guid>https://0kxwizard.github.io/writeups/thm_sticker_shop/</guid><description>&lt;ul&gt;
+&lt;img alt="servers" loading="lazy" src="https://kwesilarry1.github.io/images/servers.png"&gt; I will do writeups on
+how to hack some of these servers.&lt;/p&gt;</description></item><item><title>THM: Stickershop CTF</title><link>https://kwesilarry1.github.io/writeups/thm_sticker_shop/</link><pubDate>Sun, 30 Mar 2025 10:48:21 +0000</pubDate><guid>https://kwesilarry1.github.io/writeups/thm_sticker_shop/</guid><description>&lt;ul&gt;
 &lt;li&gt;Platform: TryHackMe&lt;/li&gt;
 &lt;li&gt;Link: &lt;a href="https://tryhackme.com/room/thestickershop"&gt;Stickershop&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Level: Easy&lt;/li&gt;
@@ -84,7 +94,7 @@ Cross-Site Scripting vulnerability.&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Nmap done: 1 IP address (1 host up) scanned in 17.08 seconds
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;we found two open ports; 22(SSH) and 8080(http)&lt;/p&gt;</description></item><item><title>Whoami?</title><link>https://0kxwizard.github.io/about/</link><pubDate>Sat, 29 Mar 2025 00:00:00 +0000</pubDate><guid>https://0kxwizard.github.io/about/</guid><description>&lt;h3 id="introduction"&gt;❓Introduction&lt;/h3&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;we found two open ports; 22(SSH) and 8080(http)&lt;/p&gt;</description></item><item><title>Whoami?</title><link>https://kwesilarry1.github.io/about/</link><pubDate>Sat, 29 Mar 2025 00:00:00 +0000</pubDate><guid>https://kwesilarry1.github.io/about/</guid><description>&lt;h3 id="introduction"&gt;❓Introduction&lt;/h3&gt;
 &lt;p&gt;Hii, I&amp;rsquo;m &lt;em&gt;&lt;strong&gt;Appiah Bismark&lt;/strong&gt;&lt;/em&gt; popularly known as &lt;em&gt;&lt;strong&gt;Kwesi
 Larry(0kxwizard)&lt;/strong&gt;&lt;/em&gt;,an Application Security Tester and Bug Hunter with
 experience in scripting, networking and linux administration. I Love
