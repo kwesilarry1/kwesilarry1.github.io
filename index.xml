@@ -1,157 +1,107 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>0kxwizard</title>
-    <link>http://localhost:1313/</link>
-    <description>Recent content on 0kxwizard</description>
-    <generator>Hugo -- 0.149.0</generator>
-    <language>en-us</language>
-    <lastBuildDate>Mon, 06 Oct 2025 08:02:52 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>How I Hacked A Vulnerable Bank Application</title>
-      <link>http://localhost:1313/writeups/vulnerable_bank/</link>
-      <pubDate>Sat, 14 Jun 2025 07:49:03 +0000</pubDate>
-      <guid>http://localhost:1313/writeups/vulnerable_bank/</guid>
-      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>0kxwizard</title><link>https://kwesilarry1.github.io/</link><description>Recent content on 0kxwizard</description><generator>Hugo -- 0.149.0</generator><language>en-us</language><lastBuildDate>Mon, 06 Oct 2025 08:02:52 +0000</lastBuildDate><atom:link href="https://kwesilarry1.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>How I Hacked A Vulnerable Bank Application</title><link>https://kwesilarry1.github.io/writeups/vulnerable_bank/</link><pubDate>Sat, 14 Jun 2025 07:49:03 +0000</pubDate><guid>https://kwesilarry1.github.io/writeups/vulnerable_bank/</guid><description>&lt;h2 id="introduction"&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;Good day fellow hackers, welcome to my blog again. In this writeup i
 will take you through how i was able to exploit an intentional
-Vulnerable Bank Application by &lt;a href=&#34;https://x.com/commando_skiipz?t=rPix1FAXa-vFamgkrxjjnQ&amp;amp;s=09&#34;&gt;Ghost St.
+Vulnerable Bank Application by &lt;a href="https://x.com/commando_skiipz?t=rPix1FAXa-vFamgkrxjjnQ&amp;amp;s=09"&gt;Ghost St.
 Badmus&lt;/a&gt;,
 One of the best Application Security Engineers in the industry.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;You can find the Lab here:&lt;/strong&gt; &lt;a href=&#34;https://github.com/Commando-X/vuln-bank.git&#34;&gt;Vulnerable Bank Application
+&lt;p&gt;&lt;strong&gt;You can find the Lab here:&lt;/strong&gt; &lt;a href="https://github.com/Commando-X/vuln-bank.git"&gt;Vulnerable Bank Application
 🏦&lt;/a&gt; or
-&lt;a href=&#34;http://vulnbank.org&#34;&gt;vulnbank.org&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;authentication--authorization-vulnerabilities&#34;&gt;Authentication &amp;amp; Authorization Vulnerabilities&lt;/h2&gt;
-&lt;h3 id=&#34;sql-injection-in-login&#34;&gt;SQL Injection in login&lt;/h3&gt;
+&lt;a href="http://vulnbank.org"&gt;vulnbank.org&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="authentication--authorization-vulnerabilities"&gt;Authentication &amp;amp; Authorization Vulnerabilities&lt;/h2&gt;
+&lt;h3 id="sql-injection-in-login"&gt;SQL Injection in login&lt;/h3&gt;
 &lt;p&gt;The first thing we will see when we access the application is the
 Login/Register page,we will try logging in with a simple SQLI payload to
 see if the application is vulnerable to SQLI. After using &lt;strong&gt;&amp;lsquo;or 1=1- -&lt;/strong&gt;
 as the username and &lt;strong&gt;pass&lt;/strong&gt; as password,we were logged in as the admin.
-&lt;img alt=&#34;Login_page&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/login_page.png&#34;&gt;
-&lt;a href=&#34;http://localhost:1313/images/sqli.png&#34;&gt;SQLI payload&lt;/a&gt;
-&lt;img alt=&#34;admin acess&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/admin_access.png&#34;&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>WebHacking-Recon Techniques</title>
-      <link>http://localhost:1313/writeups/web_recon/</link>
-      <pubDate>Tue, 13 May 2025 11:10:54 +0000</pubDate>
-      <guid>http://localhost:1313/writeups/web_recon/</guid>
-      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;img alt="Login_page" loading="lazy" src="https://kwesilarry1.github.io/images/login_page.png"&gt;
+&lt;a href="https://kwesilarry1.github.io/images/sqli.png"&gt;SQLI payload&lt;/a&gt;
+&lt;img alt="admin acess" loading="lazy" src="https://kwesilarry1.github.io/images/admin_access.png"&gt;&lt;/p&gt;</description></item><item><title>WebHacking-Recon Techniques</title><link>https://kwesilarry1.github.io/writeups/web_recon/</link><pubDate>Tue, 13 May 2025 11:10:54 +0000</pubDate><guid>https://kwesilarry1.github.io/writeups/web_recon/</guid><description>&lt;h2 id="introduction"&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;Hello Hackers, Hope you&amp;rsquo;ve grinding hard and ethically? It&amp;rsquo;s been a
 while, In this writeup i will share some Reconnaissance techniques that
 will help you to succeed in your bug bounty or Web Application Hacking.
 As we all know Recon is a crucial stage in hacking, Exploiting a target
 system is quite easy if you know much about the system and how it
 works(hence my philosophy 80% recon, 20% exploitation).Enough talking,
-Let&amp;rsquo;s get our hands dirty!!&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Robots.txt Scrapper Tool</title>
-      <link>http://localhost:1313/projects/robots_txt_scrapper/</link>
-      <pubDate>Tue, 06 May 2025 11:39:41 +0000</pubDate>
-      <guid>http://localhost:1313/projects/robots_txt_scrapper/</guid>
-      <description>&lt;h3 id=&#34;description&#34;&gt;Description&lt;/h3&gt;
+Let&amp;rsquo;s get our hands dirty!!&lt;/p&gt;</description></item><item><title>Robots.txt Scrapper Tool</title><link>https://kwesilarry1.github.io/projects/robots_txt_scrapper/</link><pubDate>Tue, 06 May 2025 11:39:41 +0000</pubDate><guid>https://kwesilarry1.github.io/projects/robots_txt_scrapper/</guid><description>&lt;h3 id="description"&gt;Description&lt;/h3&gt;
 &lt;p&gt;A tool written in python that fetches and analyzes the robots.txt file
 of a website and save the the results to a file for future use.&lt;/p&gt;
-&lt;h3 id=&#34;usage&#34;&gt;Usage[#]&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;python3 /path/to/file
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img alt=&#34;robots.txt&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/robots.png&#34;&gt; &lt;strong&gt;Link:&lt;/strong&gt;
-&lt;a href=&#34;https://github.com/kwesilarry1/Robot.txt-Scrapper&#34;&gt;https://github.com/kwesilarry1/Robot.txt-Scrapper&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="usage"&gt;Usage[#]&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;python3 /path/to/file
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img alt="robots.txt" loading="lazy" src="https://kwesilarry1.github.io/images/robots.png"&gt; &lt;strong&gt;Link:&lt;/strong&gt;
+&lt;a href="https://github.com/kwesilarry1/Robot.txt-Scrapper"&gt;https://github.com/kwesilarry1/Robot.txt-Scrapper&lt;/a&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://kwesilarry1.github.io/tags/automation/&#34;&gt;Automation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://kwesilarry1.github.io/tags/scripting/&#34;&gt;Scripting&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
-    </item>
-    <item>
-      <title>How to set up Metasploitable Lab for Web Hacking</title>
-      <link>http://localhost:1313/writeups/metasploitable/</link>
-      <pubDate>Thu, 10 Apr 2025 10:58:50 +0000</pubDate>
-      <guid>http://localhost:1313/writeups/metasploitable/</guid>
-      <description>&lt;p&gt;Hey there! it&amp;rsquo;s been a while. In this write-up, I&amp;rsquo;ll be showing you how
+&lt;li&gt;&lt;a href="https://kwesilarry1.github.io/tags/automation/"&gt;Automation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://kwesilarry1.github.io/tags/scripting/"&gt;Scripting&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>How to set up Metasploitable Lab for Web Hacking</title><link>https://kwesilarry1.github.io/writeups/metasploitable/</link><pubDate>Thu, 10 Apr 2025 10:58:50 +0000</pubDate><guid>https://kwesilarry1.github.io/writeups/metasploitable/</guid><description>&lt;p&gt;Hey there! it&amp;rsquo;s been a while. In this write-up, I&amp;rsquo;ll be showing you how
 to set up your own metalsploitable lab for web application security and
 penetration testing.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h3 id=&#34;downloading-metasploitable-2&#34;&gt;Downloading Metasploitable 2&lt;/h3&gt;
+&lt;h3 id="downloading-metasploitable-2"&gt;Downloading Metasploitable 2&lt;/h3&gt;
 &lt;p&gt;First, go to google and search for metasploitable 2 and choose the one
 from &lt;em&gt;&lt;strong&gt;sourceforge.net&lt;/strong&gt;&lt;/em&gt; or visit the link provided below:
-(&lt;a href=&#34;https://sourceforge.net/projects/metasploitable/)&#34;&gt;https://sourceforge.net/projects/metasploitable/)&lt;/a&gt;. Click on
+(&lt;a href="https://sourceforge.net/projects/metasploitable/)"&gt;https://sourceforge.net/projects/metasploitable/)&lt;/a&gt;. Click on
 &lt;em&gt;&lt;strong&gt;Download&lt;/strong&gt;&lt;/em&gt; and wait for some seconds for the zip file to download
 automatically.&lt;/p&gt;
-&lt;h3 id=&#34;setting-up&#34;&gt;Setting Up&lt;/h3&gt;
+&lt;h3 id="setting-up"&gt;Setting Up&lt;/h3&gt;
 &lt;p&gt;Extract the ZIP file using your preferred ZIP extractor:
-&lt;img alt=&#34;Extracting&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/extract.png&#34;&gt; Open virtualbox,click
-on New at the top, Enter: &lt;img alt=&#34;new\nmachine&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/create.png&#34;&gt; Enter the name of your
+&lt;img alt="Extracting" loading="lazy" src="https://kwesilarry1.github.io/images/extract.png"&gt; Open virtualbox,click
+on New at the top, Enter: &lt;img alt="new\nmachine" loading="lazy" src="https://kwesilarry1.github.io/images/create.png"&gt; Enter the name of your
 machine, make sure the &amp;ldquo;Type&amp;rdquo; and &amp;ldquo;Version&amp;rdquo; is the same as the one in
-the image below.Leave the &amp;ldquo;ISO Image&amp;rdquo; field and click on next: &lt;img alt=&#34;setting\nup&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/settings.png&#34;&gt; Choose your preferred RAM and
+the image below.Leave the &amp;ldquo;ISO Image&amp;rdquo; field and click on next: &lt;img alt="setting\nup" loading="lazy" src="https://kwesilarry1.github.io/images/settings.png"&gt; Choose your preferred RAM and
 CPU size to allocate to the machine and click on next,i will use the
 default size since metasploitable doesn&amp;rsquo;t require much space and
-resources. &lt;img alt=&#34;hardware&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/hardware.png&#34;&gt; Select &amp;ldquo;Use
+resources. &lt;img alt="hardware" loading="lazy" src="https://kwesilarry1.github.io/images/hardware.png"&gt; Select &amp;ldquo;Use
 an Existing Virtual Hard Disk File&amp;rdquo; and click on the folder icon:
-&lt;img alt=&#34;selecting disk&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/metasploitable1.png&#34;&gt; Click on
+&lt;img alt="selecting disk" loading="lazy" src="https://kwesilarry1.github.io/images/metasploitable1.png"&gt; Click on
 &amp;ldquo;Add&amp;rdquo;, locate where you extracted the zip file and select
 &amp;ldquo;Metasploitable.vmdk&amp;rdquo;.Click on Choose and finally next:
-&lt;img alt=&#34;VMDK&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/metasploitable2.png&#34;&gt; Now click on
+&lt;img alt="VMDK" loading="lazy" src="https://kwesilarry1.github.io/images/metasploitable2.png"&gt; Now click on
 &amp;ldquo;Start&amp;rdquo; to boot the machine and wait for some seconds,the default
 username and password is &lt;strong&gt;msfadmin&lt;/strong&gt;:
-&lt;img alt=&#34;start&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/start.png&#34;&gt; Type &lt;em&gt;&lt;strong&gt;ifconfig&lt;/strong&gt;&lt;/em&gt; to check
-the machine&amp;rsquo;s IP Address &lt;img alt=&#34;ip&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/ipp.png&#34;&gt; Open
+&lt;img alt="start" loading="lazy" src="https://kwesilarry1.github.io/images/start.png"&gt; Type &lt;em&gt;&lt;strong&gt;ifconfig&lt;/strong&gt;&lt;/em&gt; to check
+the machine&amp;rsquo;s IP Address &lt;img alt="ip" loading="lazy" src="https://kwesilarry1.github.io/images/ipp.png"&gt; Open
 your browser, paste the metasploitable ip in the search bar and you
 should see the list of vulnerable servers been hosted on metasploitable
 you can get your hands dirty with.
-&lt;img alt=&#34;servers&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/servers.png&#34;&gt; I will do writeups on
-how to hack some of these servers.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>THM: Stickershop CTF</title>
-      <link>http://localhost:1313/writeups/thm_sticker_shop/</link>
-      <pubDate>Sun, 30 Mar 2025 10:48:21 +0000</pubDate>
-      <guid>http://localhost:1313/writeups/thm_sticker_shop/</guid>
-      <description>&lt;ul&gt;
+&lt;img alt="servers" loading="lazy" src="https://kwesilarry1.github.io/images/servers.png"&gt; I will do writeups on
+how to hack some of these servers.&lt;/p&gt;</description></item><item><title>THM: Stickershop CTF</title><link>https://kwesilarry1.github.io/writeups/thm_sticker_shop/</link><pubDate>Sun, 30 Mar 2025 10:48:21 +0000</pubDate><guid>https://kwesilarry1.github.io/writeups/thm_sticker_shop/</guid><description>&lt;ul&gt;
 &lt;li&gt;Platform: TryHackMe&lt;/li&gt;
-&lt;li&gt;Link: &lt;a href=&#34;https://tryhackme.com/room/thestickershop&#34;&gt;Stickershop&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Link: &lt;a href="https://tryhackme.com/room/thestickershop"&gt;Stickershop&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Level: Easy&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
 &lt;p&gt;To read the flag in this very simple room, we must take advantage of a
 Cross-Site Scripting vulnerability.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h3 id=&#34;scanning&#34;&gt;Scanning&lt;/h3&gt;
+&lt;h3 id="scanning"&gt;Scanning&lt;/h3&gt;
 &lt;p&gt;Using &lt;code&gt;nmap&lt;/code&gt; to scan the target:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nmap -sV -sC Target_IP -OG The_Sticker_Shop
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;results&#34;&gt;Results&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Starting Nmap 7.95 ( https://nmap.org ) at 2025-03-30 19:58 GMT
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Nmap scan report for 10.10.97.238
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Host is up (0.17s latency).
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Not shown: 998 closed tcp ports (reset)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;PORT     STATE SERVICE VERSION
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;22/tcp   open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.9 (Ubuntu Linux; protocol 2.0)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;| ssh-hostkey: 
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|   3072 b2:54:8c:e2:d7:67:ab:8f:90:b3:6f:52:c2:73:37:69 (RSA)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|   256 14:29:ec:36:95:e5:64:49:39:3f:b4:ec:ca:5f:ee:78 (ECDSA)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|_  256 19:eb:1f:c9:67:92:01:61:0c:14:fe:71:4b:0d:50:40 (ED25519)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;8080/tcp open  http    Werkzeug httpd 3.0.1 (Python 3.8.10)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|_http-server-header: Werkzeug/3.0.1 Python/3.8.10
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|_http-title: Cat Sticker Shop
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Nmap done: 1 IP address (1 host up) scanned in 17.08 seconds
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;we found two open ports; 22(SSH) and 8080(http)&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Whoami?</title>
-      <link>http://localhost:1313/about/</link>
-      <pubDate>Sat, 29 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/about/</guid>
-      <description>&lt;h3 id=&#34;introduction&#34;&gt;❓Introduction&lt;/h3&gt;
-&lt;p&gt;Hii, I&amp;rsquo;m &lt;em&gt;&lt;strong&gt;Appiah Bismark&lt;/strong&gt;&lt;/em&gt; “Also known online as  &lt;em&gt;&lt;strong&gt;Kwesi
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;nmap -sV -sC Target_IP -OG The_Sticker_Shop
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id="results"&gt;Results&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Starting Nmap 7.95 ( https://nmap.org ) at 2025-03-30 19:58 GMT
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Nmap scan report for 10.10.97.238
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Host is up (0.17s latency).
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Not shown: 998 closed tcp ports (reset)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;PORT STATE SERVICE VERSION
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;22/tcp open ssh OpenSSH 8.2p1 Ubuntu 4ubuntu0.9 (Ubuntu Linux; protocol 2.0)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;| ssh-hostkey:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;| 3072 b2:54:8c:e2:d7:67:ab:8f:90:b3:6f:52:c2:73:37:69 (RSA)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;| 256 14:29:ec:36:95:e5:64:49:39:3f:b4:ec:ca:5f:ee:78 (ECDSA)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;|_ 256 19:eb:1f:c9:67:92:01:61:0c:14:fe:71:4b:0d:50:40 (ED25519)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;8080/tcp open http Werkzeug httpd 3.0.1 (Python 3.8.10)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;|_http-server-header: Werkzeug/3.0.1 Python/3.8.10
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;|_http-title: Cat Sticker Shop
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Nmap done: 1 IP address (1 host up) scanned in 17.08 seconds
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;we found two open ports; 22(SSH) and 8080(http)&lt;/p&gt;</description></item><item><title>Whoami?</title><link>https://kwesilarry1.github.io/about/</link><pubDate>Sat, 29 Mar 2025 00:00:00 +0000</pubDate><guid>https://kwesilarry1.github.io/about/</guid><description>&lt;h3 id="introduction"&gt;❓Introduction&lt;/h3&gt;
+&lt;p&gt;Hii, I&amp;rsquo;m &lt;em&gt;&lt;strong&gt;Appiah Bismark&lt;/strong&gt;&lt;/em&gt; “Also known online as &lt;em&gt;&lt;strong&gt;Kwesi
 Larry(0kxwizard)&lt;/strong&gt;&lt;/em&gt;,an Application Security Tester and Bug Hunter with
 experience in scripting, networking and linux administration. I Love
-breaking things (ethically), and sharing my knowledge, I love learning and   mostly use my leisure time to do
+breaking things (ethically), and sharing my knowledge, I love learning and mostly use my leisure time to do
 &lt;em&gt;&lt;strong&gt;OSINT and Forensics Investigations&lt;/strong&gt;&lt;/em&gt; and sometimes play chess.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h3 id=&#34;-skills&#34;&gt;💡 Skills&lt;/h3&gt;
+&lt;h3 id="-skills"&gt;💡 Skills&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Penetration Testing:&lt;/strong&gt; OWASP Top 10, Web Application
 Testing,Wireless Network Testing.&lt;/li&gt;
@@ -163,9 +113,6 @@ Testing, Report writing, Code Reviews,Bug Hunting.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Tools:&lt;/strong&gt; Metasploit, Burpsuite, OWASP Zap, NMAP,Wireshark,Nessuss.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h3 id=&#34;-achievements-and-certifications&#34;&gt;🏅 Achievements and Certifications&lt;/h3&gt;
-&lt;p&gt;-TryHackMe Junior Penetration Tester &lt;a href=&#34;https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-A2UKXSWHOZ.pdf&#34;&gt;certificate
-here&lt;/a&gt;&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+&lt;h3 id="-achievements-and-certifications"&gt;🏅 Achievements and Certifications&lt;/h3&gt;
+&lt;p&gt;-TryHackMe Junior Penetration Tester &lt;a href="https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-A2UKXSWHOZ.pdf"&gt;certificate
+here&lt;/a&gt;&lt;/p&gt;</description></item></channel></rss>
