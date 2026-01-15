@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>THM on 0kxwizard</title><link>https://kwesilarry1.github.io/tags/thm/</link><description>Recent content in THM on 0kxwizard</description><generator>Hugo -- 0.154.3</generator><language>en-us</language><lastBuildDate>Sun, 30 Mar 2025 10:48:21 +0000</lastBuildDate><atom:link href="https://kwesilarry1.github.io/tags/thm/index.xml" rel="self" type="application/rss+xml"/><item><title>THM: Stickershop CTF</title><link>https://kwesilarry1.github.io/writeups/thm_sticker_shop/</link><pubDate>Sun, 30 Mar 2025 10:48:21 +0000</pubDate><guid>https://kwesilarry1.github.io/writeups/thm_sticker_shop/</guid><description>&lt;ul&gt;
+&lt;li&gt;Platform: TryHackMe&lt;/li&gt;
+&lt;li&gt;Link: &lt;a href="https://tryhackme.com/room/thestickershop"&gt;Stickershop&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Level: Easy&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;To read the flag in this very simple room, we must take advantage of a
+Cross-Site Scripting vulnerability.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id="scanning"&gt;Scanning&lt;/h3&gt;
+&lt;p&gt;Using &lt;code&gt;nmap&lt;/code&gt; to scan the target:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;nmap -sV -sC Target_IP -OG The_Sticker_Shop
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id="results"&gt;Results&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Starting Nmap 7.95 ( https://nmap.org ) at 2025-03-30 19:58 GMT
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Nmap scan report for 10.10.97.238
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Host is up (0.17s latency).
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Not shown: 998 closed tcp ports (reset)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;PORT STATE SERVICE VERSION
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;22/tcp open ssh OpenSSH 8.2p1 Ubuntu 4ubuntu0.9 (Ubuntu Linux; protocol 2.0)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;| ssh-hostkey:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;| 3072 b2:54:8c:e2:d7:67:ab:8f:90:b3:6f:52:c2:73:37:69 (RSA)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;| 256 14:29:ec:36:95:e5:64:49:39:3f:b4:ec:ca:5f:ee:78 (ECDSA)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;|_ 256 19:eb:1f:c9:67:92:01:61:0c:14:fe:71:4b:0d:50:40 (ED25519)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;8080/tcp open http Werkzeug httpd 3.0.1 (Python 3.8.10)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;|_http-server-header: Werkzeug/3.0.1 Python/3.8.10
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;|_http-title: Cat Sticker Shop
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Nmap done: 1 IP address (1 host up) scanned in 17.08 seconds
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;we found two open ports; 22(SSH) and 8080(http)&lt;/p&gt;</description></item></channel></rss>

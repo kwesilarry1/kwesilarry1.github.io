@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Reconnaissance on 0kxwizard</title><link>https://kwesilarry1.github.io/tags/reconnaissance/</link><description>Recent content in Reconnaissance on 0kxwizard</description><generator>Hugo -- 0.154.3</generator><language>en-us</language><lastBuildDate>Tue, 13 May 2025 11:10:54 +0000</lastBuildDate><atom:link href="https://kwesilarry1.github.io/tags/reconnaissance/index.xml" rel="self" type="application/rss+xml"/><item><title>WebHacking-Recon Techniques</title><link>https://kwesilarry1.github.io/writeups/web_recom/</link><pubDate>Tue, 13 May 2025 11:10:54 +0000</pubDate><guid>https://kwesilarry1.github.io/writeups/web_recom/</guid><description>&lt;h2 id="introduction"&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Hello Hackers, Hope you&amp;rsquo;ve grinding hard and ethically? It&amp;rsquo;s been a
+while, In this writeup i will share some Reconnaissance techniques that
+will help you to succeed in your bug bounty or Web Application Hacking.
+As we all know Recon is a crucial stage in hacking, Exploiting a target
+system is quite easy if you know much about the system and how it
+works(hence my philosophy 80% recon, 20% exploitation).Enough talking,
+Let&amp;rsquo;s get our hands dirty!!&lt;/p&gt;</description></item></channel></rss>

@@ -1,1 +1,96 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>0kxwizard</title><link>https://kwesilarry1.github.io/</link><description>Recent content on 0kxwizard</description><generator>Hugo -- 0.154.3</generator><language>en-us</language><atom:link href="https://kwesilarry1.github.io/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>0kxwizard</title><link>https://kwesilarry1.github.io/</link><description>Recent content on 0kxwizard</description><generator>Hugo -- 0.154.3</generator><language>en-us</language><lastBuildDate>Thu, 01 Jan 2026 10:41:02 +0000</lastBuildDate><atom:link href="https://kwesilarry1.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>2025 Year Review</title><link>https://kwesilarry1.github.io/writeups/2025-year-review/</link><pubDate>Thu, 01 Jan 2026 10:41:02 +0000</pubDate><guid>https://kwesilarry1.github.io/writeups/2025-year-review/</guid><description>&lt;h1 id="introduction"&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;Do i even need an introduction? Maybe not.But even people who feel like they failed deserve to be honest about it. This is my 2025 recap in not more than 200 words.&lt;/p&gt;
+&lt;h1 id="recap-of-the-year"&gt;Recap of the year&lt;/h1&gt;
+&lt;p&gt;2025 was not the year I wanted.
+I did not become cracked or even semi-cracked in application security or bug hunting, which was my main goal.
+For that reason, everything else feels small to me.&lt;/p&gt;</description></item><item><title>Mastering SSRF | Solving all Portswigger Labs</title><link>https://kwesilarry1.github.io/writeups/ssrf/</link><pubDate>Sun, 02 Nov 2025 13:28:13 +0000</pubDate><guid>https://kwesilarry1.github.io/writeups/ssrf/</guid><description>&lt;p&gt;Server Side Request Forgery(SSRF) is a vulnerability that allows attackers to send requests on behalf of a server, During an SSRF, attackers
+forge the request signatures of the vulnerable server, allowing them to assume a privileged position on a network, bypass firewall controls, and gain access
+to internal services. In this writeup, we will exxplore how to find some basic SSRFs and also how to bypass some SSRF protections.&lt;/p&gt;
+&lt;h3 id="lab-1-basic-ssrf-against-the-local-server"&gt;LAB 1: Basic SSRF against the local server&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Objective:&lt;/strong&gt;&lt;/em&gt; This lab has a stock check feature which fetches data from an internal system. To solve the lab, change the stock check URL to access the admin interface at http://localhost/admin.&lt;/p&gt;</description></item><item><title>How I Hacked A Vulnerable Bank Application</title><link>https://kwesilarry1.github.io/writeups/vulnerable_bank/</link><pubDate>Sat, 14 Jun 2025 07:49:03 +0000</pubDate><guid>https://kwesilarry1.github.io/writeups/vulnerable_bank/</guid><description>&lt;h2 id="introduction"&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Good day hackers, welcome to my blog again. In this writeup i
+will take you through how i was able to exploit an intentional
+Vulnerable Bank Application by &lt;a href="https://x.com/commando_skiipz?t=rPix1FAXa-vFamgkrxjjnQ&amp;amp;s=09"&gt;Ghost St.
+Badmus&lt;/a&gt;,
+One of the best Application Security Engineers in the industry.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;You can find the Lab here:&lt;/strong&gt; &lt;a href="https://github.com/Commando-X/vuln-bank.git"&gt;Vulnerable Bank Application
+🏦&lt;/a&gt; or
+&lt;a href="http://vulnbank.org"&gt;vulnbank.org&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id="authentication--authorization-vulnerabilities"&gt;Authentication &amp;amp; Authorization Vulnerabilities&lt;/h2&gt;
+&lt;h3 id="sql-injection-in-login"&gt;SQL Injection in login&lt;/h3&gt;
+&lt;p&gt;The first thing we will see when we access the application is the
+Login/Register page,we will try logging in with a simple SQLI payload to
+see if the application is vulnerable to SQLI. After using &lt;strong&gt;&amp;lsquo;or 1=1- -&lt;/strong&gt;
+as the username and &lt;strong&gt;pass&lt;/strong&gt; as password,we were logged in as the admin.
+&lt;img alt="Login_page" loading="lazy" src="https://kwesilarry1.github.io/images/login_page.png"&gt;
+&lt;img alt="SQLI payload" loading="lazy" src="https://kwesilarry1.github.io/images/sqli.png"&gt;
+&lt;img alt="admin acess" loading="lazy" src="https://kwesilarry1.github.io/images/admin_access.png"&gt;&lt;/p&gt;</description></item><item><title>WebHacking-Recon Techniques</title><link>https://kwesilarry1.github.io/writeups/web_recom/</link><pubDate>Tue, 13 May 2025 11:10:54 +0000</pubDate><guid>https://kwesilarry1.github.io/writeups/web_recom/</guid><description>&lt;h2 id="introduction"&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Hello Hackers, Hope you&amp;rsquo;ve grinding hard and ethically? It&amp;rsquo;s been a
+while, In this writeup i will share some Reconnaissance techniques that
+will help you to succeed in your bug bounty or Web Application Hacking.
+As we all know Recon is a crucial stage in hacking, Exploiting a target
+system is quite easy if you know much about the system and how it
+works(hence my philosophy 80% recon, 20% exploitation).Enough talking,
+Let&amp;rsquo;s get our hands dirty!!&lt;/p&gt;</description></item><item><title>How to set up Metasploitable Lab for Web Hacking</title><link>https://kwesilarry1.github.io/writeups/metasploitable/</link><pubDate>Thu, 10 Apr 2025 10:58:50 +0000</pubDate><guid>https://kwesilarry1.github.io/writeups/metasploitable/</guid><description>&lt;p&gt;Hey there! it&amp;rsquo;s been a while. In this write-up, I&amp;rsquo;ll be showing you how
+to set up your own metalsploitable lab for web application security and
+penetration testing.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id="downloading-metasploitable-2"&gt;Downloading Metasploitable 2&lt;/h3&gt;
+&lt;p&gt;First, go to google and search for metasploitable 2 and choose the one
+from &lt;em&gt;&lt;strong&gt;sourceforge.net&lt;/strong&gt;&lt;/em&gt; or visit the link provided below:
+(&lt;a href="https://sourceforge.net/projects/metasploitable/)"&gt;https://sourceforge.net/projects/metasploitable/)&lt;/a&gt;. Click on
+&lt;em&gt;&lt;strong&gt;Download&lt;/strong&gt;&lt;/em&gt; and wait for some seconds for the zip file to download
+automatically.&lt;/p&gt;
+&lt;h3 id="setting-up"&gt;Setting Up&lt;/h3&gt;
+&lt;p&gt;Extract the ZIP file using your preferred ZIP extractor:
+&lt;img alt="Extracting" loading="lazy" src="https://kwesilarry1.github.io/images/extract.png"&gt; Open virtualbox,click
+on New at the top, Enter: &lt;img alt="new\nmachine" loading="lazy" src="https://kwesilarry1.github.io/images/create.png"&gt; Enter the name of your
+machine, make sure the &amp;ldquo;Type&amp;rdquo; and &amp;ldquo;Version&amp;rdquo; is the same as the one in
+the image below.Leave the &amp;ldquo;ISO Image&amp;rdquo; field and click on next: &lt;img alt="setting\nup" loading="lazy" src="https://kwesilarry1.github.io/images/settings.png"&gt; Choose your preferred RAM and
+CPU size to allocate to the machine and click on next,i will use the
+default size since metasploitable doesn&amp;rsquo;t require much space and
+resources. &lt;img alt="hardware" loading="lazy" src="https://kwesilarry1.github.io/images/hardware.png"&gt; Select &amp;ldquo;Use
+an Existing Virtual Hard Disk File&amp;rdquo; and click on the folder icon:
+&lt;img alt="selecting disk" loading="lazy" src="https://kwesilarry1.github.io/images/metasploitable1.png"&gt; Click on
+&amp;ldquo;Add&amp;rdquo;, locate where you extracted the zip file and select
+&amp;ldquo;Metasploitable.vmdk&amp;rdquo;.Click on Choose and finally next:
+&lt;img alt="VMDK" loading="lazy" src="https://kwesilarry1.github.io/images/metasploitable2.png"&gt; Now click on
+&amp;ldquo;Start&amp;rdquo; to boot the machine and wait for some seconds,the default
+username and password is &lt;strong&gt;msfadmin&lt;/strong&gt;:
+&lt;img alt="start" loading="lazy" src="https://kwesilarry1.github.io/images/start.png"&gt; Type &lt;em&gt;&lt;strong&gt;ifconfig&lt;/strong&gt;&lt;/em&gt; to check
+the machine&amp;rsquo;s IP Address &lt;img alt="ip" loading="lazy" src="https://kwesilarry1.github.io/images/ipp.png"&gt; Open
+your browser, paste the metasploitable ip in the search bar and you
+should see the list of vulnerable servers been hosted on metasploitable
+you can get your hands dirty with.
+&lt;img alt="servers" loading="lazy" src="https://kwesilarry1.github.io/images/servers.png"&gt; I will do writeups on
+how to hack some of these servers.&lt;/p&gt;</description></item><item><title>THM: Stickershop CTF</title><link>https://kwesilarry1.github.io/writeups/thm_sticker_shop/</link><pubDate>Sun, 30 Mar 2025 10:48:21 +0000</pubDate><guid>https://kwesilarry1.github.io/writeups/thm_sticker_shop/</guid><description>&lt;ul&gt;
+&lt;li&gt;Platform: TryHackMe&lt;/li&gt;
+&lt;li&gt;Link: &lt;a href="https://tryhackme.com/room/thestickershop"&gt;Stickershop&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Level: Easy&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;To read the flag in this very simple room, we must take advantage of a
+Cross-Site Scripting vulnerability.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id="scanning"&gt;Scanning&lt;/h3&gt;
+&lt;p&gt;Using &lt;code&gt;nmap&lt;/code&gt; to scan the target:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;nmap -sV -sC Target_IP -OG The_Sticker_Shop
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id="results"&gt;Results&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Starting Nmap 7.95 ( https://nmap.org ) at 2025-03-30 19:58 GMT
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Nmap scan report for 10.10.97.238
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Host is up (0.17s latency).
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Not shown: 998 closed tcp ports (reset)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;PORT STATE SERVICE VERSION
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;22/tcp open ssh OpenSSH 8.2p1 Ubuntu 4ubuntu0.9 (Ubuntu Linux; protocol 2.0)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;| ssh-hostkey:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;| 3072 b2:54:8c:e2:d7:67:ab:8f:90:b3:6f:52:c2:73:37:69 (RSA)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;| 256 14:29:ec:36:95:e5:64:49:39:3f:b4:ec:ca:5f:ee:78 (ECDSA)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;|_ 256 19:eb:1f:c9:67:92:01:61:0c:14:fe:71:4b:0d:50:40 (ED25519)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;8080/tcp open http Werkzeug httpd 3.0.1 (Python 3.8.10)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;|_http-server-header: Werkzeug/3.0.1 Python/3.8.10
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;|_http-title: Cat Sticker Shop
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Nmap done: 1 IP address (1 host up) scanned in 17.08 seconds
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;we found two open ports; 22(SSH) and 8080(http)&lt;/p&gt;</description></item></channel></rss>

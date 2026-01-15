@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Metaploitable on 0kxwizard</title><link>https://kwesilarry1.github.io/tags/metaploitable/</link><description>Recent content in Metaploitable on 0kxwizard</description><generator>Hugo -- 0.154.3</generator><language>en-us</language><lastBuildDate>Thu, 10 Apr 2025 10:58:50 +0000</lastBuildDate><atom:link href="https://kwesilarry1.github.io/tags/metaploitable/index.xml" rel="self" type="application/rss+xml"/><item><title>How to set up Metasploitable Lab for Web Hacking</title><link>https://kwesilarry1.github.io/writeups/metasploitable/</link><pubDate>Thu, 10 Apr 2025 10:58:50 +0000</pubDate><guid>https://kwesilarry1.github.io/writeups/metasploitable/</guid><description>&lt;p&gt;Hey there! it&amp;rsquo;s been a while. In this write-up, I&amp;rsquo;ll be showing you how
+to set up your own metalsploitable lab for web application security and
+penetration testing.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id="downloading-metasploitable-2"&gt;Downloading Metasploitable 2&lt;/h3&gt;
+&lt;p&gt;First, go to google and search for metasploitable 2 and choose the one
+from &lt;em&gt;&lt;strong&gt;sourceforge.net&lt;/strong&gt;&lt;/em&gt; or visit the link provided below:
+(&lt;a href="https://sourceforge.net/projects/metasploitable/)"&gt;https://sourceforge.net/projects/metasploitable/)&lt;/a&gt;. Click on
+&lt;em&gt;&lt;strong&gt;Download&lt;/strong&gt;&lt;/em&gt; and wait for some seconds for the zip file to download
+automatically.&lt;/p&gt;
+&lt;h3 id="setting-up"&gt;Setting Up&lt;/h3&gt;
+&lt;p&gt;Extract the ZIP file using your preferred ZIP extractor:
+&lt;img alt="Extracting" loading="lazy" src="https://kwesilarry1.github.io/images/extract.png"&gt; Open virtualbox,click
+on New at the top, Enter: &lt;img alt="new\nmachine" loading="lazy" src="https://kwesilarry1.github.io/images/create.png"&gt; Enter the name of your
+machine, make sure the &amp;ldquo;Type&amp;rdquo; and &amp;ldquo;Version&amp;rdquo; is the same as the one in
+the image below.Leave the &amp;ldquo;ISO Image&amp;rdquo; field and click on next: &lt;img alt="setting\nup" loading="lazy" src="https://kwesilarry1.github.io/images/settings.png"&gt; Choose your preferred RAM and
+CPU size to allocate to the machine and click on next,i will use the
+default size since metasploitable doesn&amp;rsquo;t require much space and
+resources. &lt;img alt="hardware" loading="lazy" src="https://kwesilarry1.github.io/images/hardware.png"&gt; Select &amp;ldquo;Use
+an Existing Virtual Hard Disk File&amp;rdquo; and click on the folder icon:
+&lt;img alt="selecting disk" loading="lazy" src="https://kwesilarry1.github.io/images/metasploitable1.png"&gt; Click on
+&amp;ldquo;Add&amp;rdquo;, locate where you extracted the zip file and select
+&amp;ldquo;Metasploitable.vmdk&amp;rdquo;.Click on Choose and finally next:
+&lt;img alt="VMDK" loading="lazy" src="https://kwesilarry1.github.io/images/metasploitable2.png"&gt; Now click on
+&amp;ldquo;Start&amp;rdquo; to boot the machine and wait for some seconds,the default
+username and password is &lt;strong&gt;msfadmin&lt;/strong&gt;:
+&lt;img alt="start" loading="lazy" src="https://kwesilarry1.github.io/images/start.png"&gt; Type &lt;em&gt;&lt;strong&gt;ifconfig&lt;/strong&gt;&lt;/em&gt; to check
+the machine&amp;rsquo;s IP Address &lt;img alt="ip" loading="lazy" src="https://kwesilarry1.github.io/images/ipp.png"&gt; Open
+your browser, paste the metasploitable ip in the search bar and you
+should see the list of vulnerable servers been hosted on metasploitable
+you can get your hands dirty with.
+&lt;img alt="servers" loading="lazy" src="https://kwesilarry1.github.io/images/servers.png"&gt; I will do writeups on
+how to hack some of these servers.&lt;/p&gt;</description></item></channel></rss>

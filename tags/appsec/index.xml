@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>AppSec on 0kxwizard</title><link>https://kwesilarry1.github.io/tags/appsec/</link><description>Recent content in AppSec on 0kxwizard</description><generator>Hugo -- 0.154.3</generator><language>en-us</language><lastBuildDate>Sat, 14 Jun 2025 07:49:03 +0000</lastBuildDate><atom:link href="https://kwesilarry1.github.io/tags/appsec/index.xml" rel="self" type="application/rss+xml"/><item><title>How I Hacked A Vulnerable Bank Application</title><link>https://kwesilarry1.github.io/writeups/vulnerable_bank/</link><pubDate>Sat, 14 Jun 2025 07:49:03 +0000</pubDate><guid>https://kwesilarry1.github.io/writeups/vulnerable_bank/</guid><description>&lt;h2 id="introduction"&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Good day hackers, welcome to my blog again. In this writeup i
+will take you through how i was able to exploit an intentional
+Vulnerable Bank Application by &lt;a href="https://x.com/commando_skiipz?t=rPix1FAXa-vFamgkrxjjnQ&amp;amp;s=09"&gt;Ghost St.
+Badmus&lt;/a&gt;,
+One of the best Application Security Engineers in the industry.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;You can find the Lab here:&lt;/strong&gt; &lt;a href="https://github.com/Commando-X/vuln-bank.git"&gt;Vulnerable Bank Application
+🏦&lt;/a&gt; or
+&lt;a href="http://vulnbank.org"&gt;vulnbank.org&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id="authentication--authorization-vulnerabilities"&gt;Authentication &amp;amp; Authorization Vulnerabilities&lt;/h2&gt;
+&lt;h3 id="sql-injection-in-login"&gt;SQL Injection in login&lt;/h3&gt;
+&lt;p&gt;The first thing we will see when we access the application is the
+Login/Register page,we will try logging in with a simple SQLI payload to
+see if the application is vulnerable to SQLI. After using &lt;strong&gt;&amp;lsquo;or 1=1- -&lt;/strong&gt;
+as the username and &lt;strong&gt;pass&lt;/strong&gt; as password,we were logged in as the admin.
+&lt;img alt="Login_page" loading="lazy" src="https://kwesilarry1.github.io/images/login_page.png"&gt;
+&lt;img alt="SQLI payload" loading="lazy" src="https://kwesilarry1.github.io/images/sqli.png"&gt;
+&lt;img alt="admin acess" loading="lazy" src="https://kwesilarry1.github.io/images/admin_access.png"&gt;&lt;/p&gt;</description></item></channel></rss>
