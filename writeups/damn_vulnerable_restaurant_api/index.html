@@ -117,7 +117,7 @@ In this write-up, I will be exploiting the API step by step and mapping each vul
         </svg>
       </span>
     </h1>
-    <div class="post-meta"><span title='2026-02-19 14:26:41 +0000 UTC'>February 19, 2026</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Appiah Bismark</span>
+    <div class="post-meta"><span title='2026-02-19 14:26:41 +0000 UTC'>February 19, 2026</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>Appiah Bismark</span>
 
 </div>
   </header> <div class="toc">
@@ -130,10 +130,14 @@ In this write-up, I will be exploiting the API step by step and mapping each vul
                 <li>
                     <a href="#introduction" aria-label="Introduction">Introduction</a></li>
                 <li>
-                    <a href="#setup--endpoint-mapping" aria-label="Setup &amp; Endpoint Mapping">Setup &amp; Endpoint Mapping</a><ul>
+                    <a href="#setup--endpoint-mapping" aria-label="Setup &amp; Endpoint Mapping">Setup &amp; Endpoint Mapping</a></li>
+                <li>
+                    <a href="#api1bolabroken-object-level-authorization" aria-label="API1:BOLA(Broken Object Level Authorization)">API1:BOLA(Broken Object Level Authorization)</a><ul>
                         
                 <li>
-                    <a href="#api1bolabroken-object-level-authorization" aria-label="API1:BOLA(Broken Object Level Authorization)">API1:BOLA(Broken Object Level Authorization)</a>
+                    <a href="#exploitation" aria-label="Exploitation">Exploitation</a></li>
+                <li>
+                    <a href="#fix" aria-label="Fix">Fix</a>
                 </li>
             </ul>
             </li>
@@ -157,8 +161,28 @@ we can now download this <code>openapi.json</code> and import it into our tool(i
 <p><img alt="Importing openapi.json to postman" loading="lazy" src="/images/import_in_postman.png">
 <img alt="Importing openapi.json to postman" loading="lazy" src="/images/import_in_postman2.png">
 We have the file imported in postman and we can see all the endpoints too. Now, let&rsquo;s get our hands dirty!</p>
-<h3 id="api1bolabroken-object-level-authorization">API1:BOLA(Broken Object Level Authorization)<a hidden class="anchor" aria-hidden="true" href="#api1bolabroken-object-level-authorization">#</a></h3>
-<p>~<a href="https://x.com/0kxwizard"><em><strong>kwesilarry</strong></em></a></p>
+<h2 id="api1bolabroken-object-level-authorization">API1:BOLA(Broken Object Level Authorization)<a hidden class="anchor" aria-hidden="true" href="#api1bolabroken-object-level-authorization">#</a></h2>
+<p>Broken Object Level Authorization (BOLA) is a critical API vulnerability that allows an attacker to bypass access control mechanisms and perform actions on specific objects without proper permissions using unique identifiers such as user IDs, usernames, account numbers, or transaction IDs.</p>
+<h3 id="exploitation">Exploitation<a hidden class="anchor" aria-hidden="true" href="#exploitation">#</a></h3>
+<p>To exploit BOLA,Register 2 accounts like we are testing for IDOR. Let’s call both <strong>Acount1</strong> and <strong>Account2</strong> respectively. On Postman, set your baseurl in the collection to http://ubuntu_server:8080 and use <code>/register</code> endpoint.
+<img alt="Account Registration" loading="lazy" src="/images/DVRA_register1.png">
+The API uses JWT for authorization, So we need to obtain a token by sending credentials to the POST <code>/token</code> endpoint before we can perform any action.
+<img alt="Getting JWT Token" loading="lazy" src="/images/DVRA_get_token.png">
+To test an ID parameter or unique number, we are going to  create order so we can have order history and oder id to play with, Don&rsquo;t forget to add your JWT token to authorization when creating the order.
+<img alt="Create order" loading="lazy" src="/images/DVRA_create_order.png">
+Note the &lsquo;id&rsquo; after creating the order,Let&rsquo;s try accessing this order with <strong>Account1</strong> authorization token(JWT) and see if we the APi is performing checks on who have access to what.
+<img alt="BOLA1" loading="lazy" src="/images/DVRA_BOLA1.png">
+<img alt="BOLA2" loading="lazy" src="/images/DVRA_BOLA2.png">
+Since the oder id is predictable(integers) we can try to access other users oder details by trying random numbers at the API endpoint and the images above clearly shows that the API endpoint does not properly check if the user has permission to access the requested object.</p>
+<p>There is also another BOLA at the <code>Update Profile</code> endpoint where we can change user&rsquo;s personal information using their usernames as identifiers. Try to change <strong>Account2</strong>&rsquo;s phone number <strong>Account1</strong>&rsquo;s token and verify it the change was successful.
+<img alt="BOLA3" loading="lazy" src="/images/DVRA_BOLA3.png">
+<img alt="BOLA4" loading="lazy" src="/images/DVRA_BOLA4.png"></p>
+<h3 id="fix">Fix<a hidden class="anchor" aria-hidden="true" href="#fix">#</a></h3>
+<ul>
+<li>Use the authorization mechanism to check if the logged-in user has access to perform the requested action on the record in every function that uses an input from the client to access a record in the database.</li>
+<li>Prefer the use of random and unpredictable values as GUIDs for records&rsquo; IDs.</li>
+</ul>
+<p>~<a href="https://x.com/0xWizard_"><em><strong>kwesilarry</strong></em></a></p>
 
 
   </div>
