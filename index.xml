@@ -32,7 +32,13 @@ will help you to succeed in your bug bounty or Web Application Hacking.
 As we all know Recon is a crucial stage in hacking, Exploiting a target
 system is quite easy if you know much about the system and how it
 works(hence my philosophy 80% recon, 20% exploitation).Enough talking,
-Let&amp;rsquo;s get our hands dirty!!&lt;/p&gt;</description></item><item><title>How to set up Metasploitable Lab for Web Hacking</title><link>https://kwesilarry1.github.io/writeups/metasploitable/</link><pubDate>Thu, 10 Apr 2025 10:58:50 +0000</pubDate><guid>https://kwesilarry1.github.io/writeups/metasploitable/</guid><description>&lt;p&gt;Hey there! it&amp;rsquo;s been a while. In this write-up, I&amp;rsquo;ll be showing you how
+Let&amp;rsquo;s get our hands dirty!!&lt;/p&gt;</description></item><item><title>Robots.txt Scrapper Tool</title><link>https://kwesilarry1.github.io/projects/robot_txt_scrapper/</link><pubDate>Tue, 06 May 2025 11:39:41 +0000</pubDate><guid>https://kwesilarry1.github.io/projects/robot_txt_scrapper/</guid><description>&lt;h3 id="description"&gt;Description&lt;/h3&gt;
+&lt;p&gt;A tool written in python that fetches and analyzes the robots.txt file
+of a website and save the the results to a file for future use.&lt;/p&gt;
+&lt;h3 id="usage"&gt;Usage&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;python3 /path/to/file
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img alt="robots.txt" loading="lazy" src="https://kwesilarry1.github.io/images/robots.png"&gt; &lt;strong&gt;Link:&lt;/strong&gt;
+&lt;a href="https://github.com/kwesilarry1/Robot.txt-Scrapper"&gt;https://github.com/kwesilarry1/Robot.txt-Scrapper&lt;/a&gt;&lt;/p&gt;</description></item><item><title>How to set up Metasploitable Lab for Web Hacking</title><link>https://kwesilarry1.github.io/writeups/metasploitable/</link><pubDate>Thu, 10 Apr 2025 10:58:50 +0000</pubDate><guid>https://kwesilarry1.github.io/writeups/metasploitable/</guid><description>&lt;p&gt;Hey there! it&amp;rsquo;s been a while. In this write-up, I&amp;rsquo;ll be showing you how
 to set up your own metalsploitable lab for web application security and
 penetration testing.&lt;/p&gt;
 &lt;hr&gt;
