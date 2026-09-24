@@ -1,0 +1,255 @@
+---
+
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const projects = (await getCollection("projects"))
+.sort((a, b) => {
+const dateA = a.data.date?.valueOf() ?? 0;
+const dateB = b.data.date?.valueOf() ?? 0;
+
+
+return dateB - dateA;
+
+
+ });
+---
+
+<BaseLayout
+title="Projects | 0xWizard"
+description="Projects, experiments, and things built by Kwesi Larry."
+
+>
+
+  <section class="projects-page">
+    <div class="container">
+      <header class="page-header">
+        <p class="terminal-label">$ ls projects/</p>
+
+
+    <h1>Projects</h1>
+
+    <p>
+      Things I've built, experimented with, and occasionally broken
+      while figuring out how they work.
+    </p>
+  </header>
+
+  {projects.length > 0 ? (
+    <div class="projects-grid">
+      {projects.map((project) => (
+        <article class="project-card">
+          {project.data.image && (
+            <img
+              src={project.data.image}
+              alt={project.data.title}
+              class="project-image"
+            />
+          )}
+
+          <div class="project-content">
+            {project.data.date && (
+              <time datetime={project.data.date.toISOString()}>
+                {project.data.date.toLocaleDateString("en-US", {
+                  year: "numeric",
+                  month: "short",
+                })}
+              </time>
+            )}
+
+            <h2>
+              <a href={`/projects/${project.id}`}>
+                {project.data.title}
+              </a>
+            </h2>
+
+            <p class="description">
+              {project.data.description}
+            </p>
+
+            {project.data.tags.length > 0 && (
+              <div class="tags">
+                {project.data.tags.map((tag) => (
+                  <span>#{tag}</span>
+                ))}
+              </div>
+            )}
+
+            <div class="project-links">
+              <a href={`/projects/${project.id}`}>
+                View project →
+              </a>
+
+              {project.data.github && (
+                <a
+                  href={project.data.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub ↗
+                </a>
+              )}
+
+              {project.data.demo && (
+                <a
+                  href={project.data.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Demo ↗
+                </a>
+              )}
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  ) : (
+    <div class="empty-state">
+      <span>$</span> No projects found.
+    </div>
+  )}
+</div>
+
+
+  </section>
+</BaseLayout>
+
+<style>
+  .projects-page {
+    padding: 6rem 0;
+  }
+
+  .page-header {
+    max-width: 750px;
+    margin-bottom: 3rem;
+  }
+
+  .terminal-label {
+    margin: 0 0 1rem;
+    color: var(--accent);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.85rem;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: clamp(3rem, 7vw, 5rem);
+    line-height: 1;
+    letter-spacing: -0.05em;
+  }
+
+  .page-header > p:last-child {
+    margin-top: 1.5rem;
+    color: var(--muted);
+    font-size: 1.05rem;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .project-card {
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--panel);
+    transition:
+      transform 0.2s ease,
+      border-color 0.2s ease;
+  }
+
+  .project-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent-dim);
+  }
+
+  .project-image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .project-content {
+    padding: 1.7rem;
+  }
+
+  .project-content time {
+    color: var(--accent);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.72rem;
+  }
+
+  .project-content h2 {
+    margin: 0.7rem 0;
+    font-size: 1.5rem;
+  }
+
+  .project-content h2 a {
+    color: var(--text);
+  }
+
+  .project-content h2 a:hover {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .description {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.2rem;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.7rem;
+  }
+
+  .tags span {
+    color: var(--accent);
+  }
+
+  .project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.75rem;
+  }
+
+  .project-links a {
+    color: var(--muted);
+  }
+
+  .project-links a:hover {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .empty-state {
+    padding: 2rem;
+    border: 1px dashed var(--border);
+    border-radius: 8px;
+    color: var(--muted);
+    font-family: "JetBrains Mono", monospace;
+  }
+
+  .empty-state span {
+    color: var(--accent);
+  }
+
+  @media (max-width: 750px) {
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

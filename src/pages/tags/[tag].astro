@@ -1,0 +1,210 @@
+---
+
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+const writeups = (await getCollection("writeups"))
+.filter((writeup) => !writeup.data.draft);
+
+const tags = new Set<string>();
+
+for (const writeup of writeups) {
+for (const tag of writeup.data.tags) {
+tags.add(tag.toLowerCase());
+}
+}
+
+return [...tags].map((tag) => ({
+params: { tag },
+}));
+}
+
+const { tag } = Astro.params;
+
+const writeups = (await getCollection("writeups"))
+.filter((writeup) => !writeup.data.draft)
+.filter((writeup) =>
+writeup.data.tags.some(
+(writeupTag) => writeupTag.toLowerCase() === tag
+)
+)
+.sort(
+(a, b) =>
+b.data.date.valueOf() - a.data.date.valueOf()
+);
+---
+
+<BaseLayout
+title={`#${tag} | 0xWizard`}
+description={`Write-ups tagged with ${tag}.`}
+
+>
+
+  <section class="tag-page">
+    <div class="container">
+      <header class="page-header">
+        <a href="/tags/" class="back-link">← All tags</a>
+
+
+    <p class="terminal-label">$ grep -r "#{tag}" writeups/</p>
+
+    <h1>#{tag}</h1>
+
+    <p>
+      {writeups.length}
+      {writeups.length === 1 ? " write-up" : " write-ups"}
+    </p>
+  </header>
+
+  {writeups.length > 0 ? (
+    <div class="writeups">
+      {writeups.map((writeup) => (
+        <article class="writeup">
+          <div class="date">
+            {writeup.data.date.toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "short",
+              day: "numeric",
+            })}
+          </div>
+
+          <h2>
+            <a href={`/writeups/${writeup.id}`}>
+              {writeup.data.title}
+            </a>
+          </h2>
+
+          {writeup.data.description && (
+            <p class="description">
+              {writeup.data.description}
+            </p>
+          )}
+
+          <div class="writeup-tags">
+            {writeup.data.tags.map((writeupTag) => (
+              <a
+                href={`/tags/${writeupTag.toLowerCase()}/`}
+              >
+                #{writeupTag}
+              </a>
+            ))}
+          </div>
+        </article>
+      ))}
+    </div>
+  ) : (
+    <div class="empty-state">
+      <span>$</span> No write-ups found for this tag.
+    </div>
+  )}
+</div>
+
+
+  </section>
+</BaseLayout>
+
+<style>
+  .tag-page {
+    padding: 6rem 0;
+  }
+
+  .page-header {
+    max-width: 800px;
+    margin-bottom: 3rem;
+  }
+
+  .back-link {
+    display: inline-block;
+    margin-bottom: 2rem;
+    color: var(--muted);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.8rem;
+  }
+
+  .back-link:hover {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .terminal-label {
+    margin: 0 0 1rem;
+    color: var(--accent);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.85rem;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: clamp(3rem, 7vw, 5rem);
+    line-height: 1;
+    letter-spacing: -0.05em;
+  }
+
+  .page-header > p:last-child {
+    margin-top: 1rem;
+    color: var(--muted);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.8rem;
+  }
+
+  .writeups {
+    border-top: 1px solid var(--border);
+  }
+
+  .writeup {
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .date {
+    color: var(--accent);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.75rem;
+  }
+
+  .writeup h2 {
+    margin: 0.6rem 0;
+    font-size: 1.6rem;
+  }
+
+  .writeup h2 a {
+    color: var(--text);
+  }
+
+  .writeup h2 a:hover {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .description {
+    max-width: 750px;
+    margin: 0;
+    color: var(--muted);
+  }
+
+  .writeup-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1rem;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.7rem;
+  }
+
+  .writeup-tags a {
+    color: var(--accent);
+  }
+
+  .empty-state {
+    padding: 2rem;
+    border: 1px dashed var(--border);
+    border-radius: 8px;
+    color: var(--muted);
+    font-family: "JetBrains Mono", monospace;
+  }
+
+  .empty-state span {
+    color: var(--accent);
+  }
+</style>

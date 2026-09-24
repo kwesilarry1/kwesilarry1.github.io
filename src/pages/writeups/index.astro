@@ -1,0 +1,158 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const writeups = (await getCollection("writeups"))
+  .filter((writeup) => !writeup.data.draft)
+  .sort(
+    (a, b) =>
+      b.data.date.valueOf() - a.data.date.valueOf()
+  );
+---
+
+<BaseLayout
+  title="Write-ups | 0xWizard"
+  description="Application security, bug bounty, web security and research write-ups by 0xWizard."
+>
+  <section class="page-header container">
+    <p class="terminal-label">$ ls ~/writeups</p>
+
+    <h1>Write-ups</h1>
+
+    <p>
+      Security research, application security labs, bug bounty notes,
+      and things I've broken while learning how not to break things.
+    </p>
+  </section>
+
+  <section class="container writeups">
+    {writeups.map((writeup) => (
+      <article class="writeup-card">
+        <div class="meta">
+          <time datetime={writeup.data.date.toISOString()}>
+            {writeup.data.date.toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "short",
+              day: "numeric",
+            })}
+          </time>
+
+          <span>·</span>
+
+          <div class="tags">
+            {writeup.data.tags.map((tag) => (
+              <span>#{tag}</span>
+            ))}
+          </div>
+        </div>
+
+        <h2>
+          <a href={`/writeups/${writeup.id}`}>
+            {writeup.data.title}
+          </a>
+        </h2>
+
+        {writeup.data.description && (
+          <p>{writeup.data.description}</p>
+        )}
+
+        <a
+          class="read-more"
+          href={`/writeups/${writeup.id}`}
+        >
+          Read write-up →
+        </a>
+      </article>
+    ))}
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    padding: 6rem 0 3rem;
+  }
+
+  .terminal-label {
+    color: var(--accent);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.85rem;
+  }
+
+  .page-header h1 {
+    margin: 0.75rem 0 1rem;
+    font-size: clamp(3rem, 7vw, 5rem);
+    letter-spacing: -0.05em;
+  }
+
+  .page-header p:last-child {
+    max-width: 650px;
+    color: var(--muted);
+  }
+
+  .writeups {
+    display: grid;
+    gap: 1rem;
+    padding-bottom: 5rem;
+  }
+
+  .writeup-card {
+    padding: 2rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--panel);
+    transition:
+      border-color 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .writeup-card:hover {
+    border-color: var(--accent-dim);
+    transform: translateY(-2px);
+  }
+
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.7rem;
+    color: var(--muted);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.75rem;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tags span {
+    color: var(--accent);
+  }
+
+  .writeup-card h2 {
+    margin: 0.7rem 0;
+    font-size: 1.6rem;
+  }
+
+  .writeup-card h2 a {
+    color: var(--text);
+  }
+
+  .writeup-card h2 a:hover {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .writeup-card p {
+    max-width: 750px;
+    color: var(--muted);
+  }
+
+  .read-more {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.85rem;
+  }
+</style>

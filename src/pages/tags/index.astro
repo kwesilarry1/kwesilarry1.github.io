@@ -1,0 +1,174 @@
+---
+
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const writeups = (await getCollection("writeups"))
+.filter((writeup) => !writeup.data.draft);
+
+const tagMap = new Map<string, number>();
+
+for (const writeup of writeups) {
+for (const tag of writeup.data.tags) {
+tagMap.set(tag, (tagMap.get(tag) ?? 0) + 1);
+}
+}
+
+const tags = [...tagMap.entries()].sort((a, b) =>
+a[0].localeCompare(b[0])
+);
+---
+
+<BaseLayout
+title="Tags | 0xWizard"
+description="Browse 0xWizard write-ups by topic and security category."
+
+>
+
+  <section class="tags-page">
+    <div class="container">
+      <header class="page-header">
+        <p class="terminal-label">$ ls tags/</p>
+        <h1>Tags</h1>
+        <p>
+          Browse write-ups by topic, technology, vulnerability, and
+          security domain.
+        </p>
+      </header>
+
+
+  {tags.length > 0 ? (
+    <div class="tags-grid">
+      {tags.map(([tag, count]) => (
+        <a
+          href={`/tags/${encodeURIComponent(tag.toLowerCase())}/`}
+          class="tag-card"
+        >
+          <div class="tag-name">#{tag}</div>
+
+          <div class="tag-meta">
+            <span>
+              {count} {count === 1 ? "write-up" : "write-ups"}
+            </span>
+
+            <span class="arrow">→</span>
+          </div>
+        </a>
+      ))}
+    </div>
+  ) : (
+    <div class="empty-state">
+      <span>$</span> No tags found.
+    </div>
+  )}
+</div>
+
+
+  </section>
+</BaseLayout>
+
+<style>
+  .tags-page {
+    padding: 6rem 0;
+  }
+
+  .page-header {
+    max-width: 700px;
+    margin-bottom: 3rem;
+  }
+
+  .terminal-label {
+    margin: 0 0 1rem;
+    color: var(--accent);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.85rem;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: clamp(3rem, 7vw, 5rem);
+    line-height: 1;
+    letter-spacing: -0.05em;
+  }
+
+  .page-header > p:last-child {
+    margin-top: 1.5rem;
+    color: var(--muted);
+    font-size: 1.05rem;
+  }
+
+  .tags-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .tag-card {
+    display: block;
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--panel);
+    transition:
+      transform 0.2s ease,
+      border-color 0.2s ease,
+      background 0.2s ease;
+  }
+
+  .tag-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent-dim);
+    background: var(--bg-soft);
+    text-decoration: none;
+  }
+
+  .tag-name {
+    color: var(--accent);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+
+  .tag-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+    color: var(--muted);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.75rem;
+  }
+
+  .arrow {
+    color: var(--accent);
+    font-size: 1rem;
+  }
+
+  .empty-state {
+    padding: 2rem;
+    border: 1px dashed var(--border);
+    border-radius: 8px;
+    color: var(--muted);
+    font-family: "JetBrains Mono", monospace;
+  }
+
+  .empty-state span {
+    color: var(--accent);
+  }
+
+  @media (max-width: 800px) {
+    .tags-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 550px) {
+    .tags-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .tags-page {
+      padding: 4rem 0;
+    }
+  }
+</style>

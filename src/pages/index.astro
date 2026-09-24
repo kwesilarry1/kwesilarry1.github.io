@@ -1,17 +1,497 @@
----
 
 ---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+const writeups = (await getCollection("writeups"))
+  .filter((writeup) => !writeup.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const latestWriteups = writeups.slice(0, 3);
+---
+
+<BaseLayout
+  title="0xWizard | Application Security × Bug Hunter × Chess Player"
+  description="Kwesi Larry's personal blog covering application security, bug hunting, security research, projects, and technical explorations."
+>
+  <section class="hero">
+    <div class="container hero-content">
+      <p class="terminal-line">
+        <span class="prompt">$</span> whoami
+      </p>
+
+      <h1>Kwesi Larry</h1>
+
+      <p class="tagline">
+        Application Security
+        <span>×</span>
+        Bug Hunter
+        <span>×</span>
+        Chess Player
+      </p>
+
+      <p class="intro">
+        Cybersecurity student exploring application security, bug bounty
+        hunting, security research, and building things along the way.
+      </p>
+
+      <div class="actions">
+        <a href="/writeups/" class="button primary">
+          Read the write-ups
+        </a>
+
+        <a href="/whoami/" class="button secondary">
+          Whoami <span>→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="terminal-section">
+    <div class="container">
+      <div class="terminal">
+        <div class="terminal-bar" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div class="terminal-body">
+          <p>
+            <span class="green">$</span>
+            cat /home/kwesilarry/about
+          </p>
+
+          <p>
+            I'm Kwesi Larry, also known online as
+            <strong> 0xWizard</strong>.
+          </p>
+
+          <p>
+            This is my corner of the internet where I document what I'm
+            learning, building, breaking, and researching.
+          </p>
+
+          <p>
+            My main focus is application security and bug hunting, with
+            interests spanning web security, APIs, security engineering,
+            robotics, and embedded systems.
+          </p>
+
+          <p>
+            <span class="green">$</span> ls interests/
+          </p>
+
+          <ul>
+            <li>Application Security</li>
+            <li>Web &amp; API Security</li>
+            <li>Bug Bounty Hunting</li>
+            <li>Security Research</li>
+            <li>Robotics &amp; Embedded Systems</li>
+            <li>Chess</li>
+          </ul>
+
+          <p class="terminal-cursor">
+            <span class="green">$</span> _
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="latest">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">LATEST</p>
+          <h2>Write-ups</h2>
+        </div>
+
+        <a href="/writeups/" class="view-all">
+          View all <span>→</span>
+        </a>
+      </div>
+
+      {latestWriteups.length > 0 ? (
+        <div class="latest-grid">
+          {latestWriteups.map((writeup) => (
+            <article class="writeup-card">
+              <div class="card-meta">
+                <time datetime={writeup.data.date.toISOString()}>
+                  {writeup.data.date.toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "short",
+                    day: "numeric",
+                  })}
+                </time>
+              </div>
+
+              <h3>
+                <a href={`/writeups/${writeup.id}`}>
+                  {writeup.data.title}
+                </a>
+              </h3>
+
+              {writeup.data.description && (
+                <p class="card-description">
+                  {writeup.data.description}
+                </p>
+              )}
+
+              {writeup.data.tags.length > 0 && (
+                <div class="card-tags">
+                  {writeup.data.tags.map((tag) => (
+                    <a href={`/tags/${tag.toLowerCase()}`}>
+                      #{tag}
+                    </a>
+                  ))}
+                </div>
+              )}
+
+              <a
+                href={`/writeups/${writeup.id}`}
+                class="read-more"
+              >
+                Read write-up <span>→</span>
+              </a>
+            </article>
+          ))}
+        </div>
+      ) : (
+        <div class="empty-state">
+          <p>
+            <span>$</span> No write-ups found.
+          </p>
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    padding: 8rem 0 7rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-content {
+    max-width: 1000px;
+  }
+
+  .terminal-line {
+    margin: 0 0 1.5rem;
+    color: var(--muted);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.9rem;
+  }
+
+  .terminal-line .prompt {
+    color: var(--accent);
+  }
+
+  h1 {
+    margin: 0;
+    color: var(--text);
+    font-size: clamp(3.5rem, 9vw, 7rem);
+    line-height: 0.95;
+    letter-spacing: -0.07em;
+  }
+
+  .tagline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin: 1.8rem 0 1rem;
+    color: var(--accent);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.95rem;
+  }
+
+  .tagline span {
+    color: var(--muted);
+  }
+
+  .intro {
+    max-width: 680px;
+    margin: 0;
+    color: var(--muted);
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 2rem;
+  }
+
+  .button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.85rem;
+    transition:
+      background 0.2s ease,
+      border-color 0.2s ease,
+      color 0.2s ease;
+  }
+
+  .button:hover {
+    text-decoration: none;
+  }
+
+  .button.primary {
+    color: #000;
+    background: var(--accent);
+    border-color: var(--accent);
+    font-weight: 700;
+  }
+
+  .button.primary:hover {
+    background: transparent;
+    color: var(--accent);
+  }
+
+  .button.secondary {
+    color: var(--text);
+  }
+
+  .button.secondary:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+
+  .terminal-section {
+    padding: 5rem 0;
+  }
+
+  .terminal {
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--panel);
+  }
+
+  .terminal-bar {
+    display: flex;
+    gap: 7px;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .terminal-bar span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--border);
+  }
+
+  .terminal-body {
+    padding: 1.7rem;
+    color: var(--muted);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.88rem;
+    line-height: 1.8;
+  }
+
+  .terminal-body p {
+    margin: 0 0 1rem;
+  }
+
+  .terminal-body strong {
+    color: var(--text);
+  }
+
+  .terminal-body .green {
+    color: var(--accent);
+  }
+
+  .terminal-body ul {
+    margin: 0 0 1rem;
+    padding-left: 1.5rem;
+  }
+
+  .terminal-body li {
+    margin: 0.25rem 0;
+  }
+
+  .terminal-cursor {
+    margin-bottom: 0 !important;
+  }
+
+  .latest {
+    padding-bottom: 5rem;
+  }
+
+  .section-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .eyebrow {
+    margin: 0;
+    color: var(--accent);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+  }
+
+  h2 {
+    margin: 0.3rem 0 0;
+    font-size: 2rem;
+    letter-spacing: -0.03em;
+  }
+
+  .view-all {
+    color: var(--muted);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.8rem;
+  }
+
+  .view-all:hover {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .latest-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .writeup-card {
+    display: flex;
+    min-height: 280px;
+    flex-direction: column;
+    padding: 1.7rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--panel);
+    transition:
+      transform 0.2s ease,
+      border-color 0.2s ease;
+  }
+
+  .writeup-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent-dim);
+  }
+
+  .card-meta {
+    color: var(--accent);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.72rem;
+  }
+
+  .writeup-card h3 {
+    margin: 0.8rem 0;
+    font-size: 1.35rem;
+    line-height: 1.35;
+  }
+
+  .writeup-card h3 a {
+    color: var(--text);
+  }
+
+  .writeup-card h3 a:hover {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .card-description {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+
+  .card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-top: auto;
+    padding-top: 1.5rem;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.7rem;
+  }
+
+  .card-tags a {
+    color: var(--accent);
+  }
+
+  .card-tags a:hover {
+    text-decoration: none;
+  }
+
+  .read-more {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--muted);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.78rem;
+  }
+
+  .read-more:hover {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .empty-state {
+    padding: 2rem;
+    border: 1px dashed var(--border);
+    border-radius: 8px;
+    color: var(--muted);
+    font-family: "JetBrains Mono", monospace;
+  }
+
+  .empty-state span {
+    color: var(--accent);
+  }
+
+  @media (max-width: 850px) {
+    .latest-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .writeup-card {
+      min-height: auto;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .hero {
+      padding: 5rem 0 4rem;
+    }
+
+    .tagline {
+      line-height: 1.8;
+    }
+
+    .actions {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .button {
+      justify-content: center;
+    }
+
+    .section-heading {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .terminal-body {
+      padding: 1.2rem;
+      font-size: 0.8rem;
+    }
+  }
+</style>
