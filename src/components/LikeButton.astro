@@ -1,0 +1,155 @@
+---
+interface Props {
+  slug: string;
+}
+
+const { slug } = Astro.props;
+---
+
+<div class="like-box" data-slug={slug}>
+  <button class="like-button" type="button" aria-label="Like this write-up">
+    <span class="heart">♡</span>
+    <span class="like-text">Like</span>
+    <span class="like-count">0</span>
+  </button>
+
+  <p class="like-status" aria-live="polite"></p>
+</div>
+
+<script>
+  import { createClient } from "@supabase/supabase-js";
+
+  const supabase = createClient(
+    import.meta.env.PUBLIC_SUPABASE_URL,
+    import.meta.env.PUBLIC_SUPABASE_PUBLISHABLE_KEY
+  );
+
+  const likeBoxes = document.querySelectorAll(".like-box");
+
+  likeBoxes.forEach((box) => {
+    const slug = box.getAttribute("data-slug");
+
+    if (!slug) return;
+
+    const button = box.querySelector(".like-button");
+    const heart = box.querySelector(".heart");
+    const text = box.querySelector(".like-text");
+    const count = box.querySelector(".like-count");
+    const status = box.querySelector(".like-status");
+
+    if (!button || !heart || !text || !count || !status) return;
+
+    const storageKey = `liked:${slug}`;
+
+    let visitorId = localStorage.getItem("0xwizard-visitor-id");
+
+    if (!visitorId) {
+      visitorId = crypto.randomUUID();
+      localStorage.setItem("0xwizard-visitor-id", visitorId);
+    }
+
+    async function loadLikes() {
+      const { count: total, error } = await supabase
+        .from("post_likes")
+        .select("*", { count: "exact", head: true })
+        .eq("post_slug", slug);
+
+      if (error) {
+        console.error("Error loading likes:", error);
+        status.textContent = "Unable to load likes.";
+        return;
+      }
+
+      count.textContent = String(total ?? 0);
+
+      if (localStorage.getItem(storageKey)) {
+        button.classList.add("liked");
+        heart.textContent = "♥";
+        text.textContent = "Liked";
+      }
+    }
+
+    button.addEventListener("click", async () => {
+      if (localStorage.getItem(storageKey)) {
+        status.textContent = "You already liked this write-up.";
+        return;
+      }
+
+      button.disabled = true;
+
+      const { error } = await supabase
+        .from("post_likes")
+        .insert({
+          post_slug: slug,
+          visitor_id: visitorId,
+        });
+
+      if (error) {
+        console.error("Error saving like:", error);
+        status.textContent = "Could not save your like.";
+        button.disabled = false;
+        return;
+      }
+
+      localStorage.setItem(storageKey, "true");
+
+      const current = Number(count.textContent ?? 0);
+      count.textContent = String(current + 1);
+
+      button.classList.add("liked");
+      heart.textContent = "♥";
+      text.textContent = "Liked";
+      status.textContent = "Thanks for the support.";
+
+      button.disabled = false;
+    });
+
+    loadLikes();
+  });
+</script>
+
+<style>
+  .like-box {
+    margin: 3rem 0;
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .like-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    background: var(--panel);
+    color: var(--text);
+    cursor: pointer;
+    font: inherit;
+  }
+
+  .like-button:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .like-button.liked {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .heart {
+    font-size: 1.2rem;
+  }
+
+  .like-count {
+    font-family: "JetBrains Mono", "Fira Code", monospace;
+  }
+
+  .like-status {
+    margin: 0.6rem 0 0;
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+</style>

@@ -20,6 +20,7 @@ const { writeup } = Astro.props;
 const { Content } = await render(writeup);
 
 const { title, description, date, tags } = writeup.data;
+const slug = writeup.id;
 ---
 
 <PostLayout
@@ -27,6 +28,8 @@ const { title, description, date, tags } = writeup.data;
   description={description}
   date={date}
   tags={tags}
+  slug={slug}
+
 >
   <Content />
 </PostLayout>

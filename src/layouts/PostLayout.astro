@@ -1,14 +1,16 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
+import LikeButton from "../components/LikeButton.astro";
 
 interface Props {
   title: string;
   description?: string;
   date: Date;
   tags: string[];
+  slug: string;
 }
 
-const { title, description, date, tags } = Astro.props;
+const { title, description, date, tags, slug } = Astro.props;
 
 const formattedDate = date.toLocaleDateString("en-US", {
   year: "numeric",
@@ -45,6 +47,9 @@ const formattedDate = date.toLocaleDateString("en-US", {
       <slot />
     </div>
   </article>
+<LikeButton slug={slug} />
+
+
 </BaseLayout>
 
 <style>
