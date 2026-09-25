@@ -46,13 +46,44 @@ const formattedDate = date.toLocaleDateString("en-US", {
     <div class="post-content container">
       <slot />
     </div>
+<div class="back-to-writeups">
+  <a href="/writeups/" class="back-button">
+    ← Back to writeups
+  </a>
+</div>
   </article>
 <LikeButton slug={slug} />
-
-
 </BaseLayout>
 
 <style>
+.back-to-writeups {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--muted);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.8rem;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.back-button:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--panel);
+  text-decoration: none;
+}
   .post {
     padding: 5rem 0;
   }
