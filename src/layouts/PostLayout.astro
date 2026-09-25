@@ -46,17 +46,21 @@ const formattedDate = date.toLocaleDateString("en-US", {
     <div class="post-content container">
       <slot />
     </div>
-<div class="back-to-writeups">
+<div class="post-footer">
   <a href="/writeups/" class="back-button">
     ← Back to writeups
   </a>
+  <LikeButton slug={slug} />
 </div>
   </article>
-<LikeButton slug={slug} />
 </BaseLayout>
 
 <style>
-.back-to-writeups {
+.post-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
   margin-top: 4rem;
   padding-top: 2rem;
   border-top: 1px solid var(--border);
@@ -84,6 +88,9 @@ const formattedDate = date.toLocaleDateString("en-US", {
   background: var(--panel);
   text-decoration: none;
 }
+
+
+
   .post {
     padding: 5rem 0;
   }
@@ -205,4 +212,19 @@ const formattedDate = date.toLocaleDateString("en-US", {
     background: transparent;
     color: inherit;
   }
+@media (max-width: 600px) {
+  .post-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .post-footer .like-box,
+  .post-footer .back-button {
+    width: 100%;
+  }
+
+  .post-footer .back-button {
+    justify-content: center;
+  }
+}
 </style>
