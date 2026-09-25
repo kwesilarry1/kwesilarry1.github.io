@@ -109,47 +109,45 @@ const { slug } = Astro.props;
 </script>
 
 <style>
-  .like-box {
-    margin: 3rem 0;
-    padding: 1.5rem 0;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-  }
+  ..like-box {
+  margin: 0;
+  padding: 0;
+}
 
-  .like-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.7rem 1rem;
-    border: 1px solid var(--border);
-    border-radius: 7px;
-    background: var(--panel);
-    color: var(--text);
-    cursor: pointer;
-    font: inherit;
-  }
+.like-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--panel);
+  color: var(--text);
+  cursor: pointer;
+  font: inherit;
+}
 
-  .like-button:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-  }
+.like-button:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
 
-  .like-button.liked {
-    border-color: var(--accent);
-    color: var(--accent);
-  }
+.like-button.liked {
+  border-color: var(--accent);
+  color: var(--accent);
+}
 
-  .heart {
-    font-size: 1.2rem;
-  }
+.heart {
+  font-size: 1.2rem;
+}
 
-  .like-count {
-    font-family: "JetBrains Mono", "Fira Code", monospace;
-  }
+.like-count {
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+}
 
-  .like-status {
-    margin: 0.6rem 0 0;
-    color: var(--muted);
-    font-size: 0.85rem;
-  }
+.like-status {
+  margin: 0.6rem 0 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
 </style>
