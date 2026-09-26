@@ -17,7 +17,17 @@ const { slug } = Astro.props;
 </div>
 
 <script>
+
   import { createClient } from "@supabase/supabase-js";
+declare global {
+  interface Window {
+    gtag?: (
+      command: string,
+      eventName: string,
+      parameters?: Record<string, string>
+    ) => void;
+  }
+}
 
   const supabase = createClient(
     import.meta.env.PUBLIC_SUPABASE_URL,
@@ -95,6 +105,11 @@ const { slug } = Astro.props;
 
       const current = Number(count.textContent ?? 0);
       count.textContent = String(current + 1);
+      if (typeof window.gtag === "function") {
+  window.gtag("event", "like_writeup", {
+    post_slug: slug,
+  });
+}
 
       button.classList.add("liked");
       heart.textContent = "♥";
