@@ -18,6 +18,8 @@ const {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const imageURL = new URL(image, Astro.site);
+const gaId = import.meta.env.PUBLIC_GA_ID;
+
 ---
 
 <!doctype html>
@@ -98,6 +100,22 @@ const imageURL = new URL(image, Astro.site);
       name="twitter:image"
       content={imageURL}
     />
+{gaId && (
+  <>
+    <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}></script>
+
+    <script is:inline define:vars={{ gaId }}>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        window.dataLayer.push(arguments);
+      }
+
+      gtag("js", new Date());
+      gtag("config", gaId);
+    </script>
+  </>
+)}
   </head>
 
   <body>

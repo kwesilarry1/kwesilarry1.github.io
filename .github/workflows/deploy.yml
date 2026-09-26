@@ -37,6 +37,7 @@ jobs:
         env:
           PUBLIC_SUPABASE_URL: ${{ secrets.PUBLIC_SUPABASE_URL }}
           PUBLIC_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.PUBLIC_SUPABASE_PUBLISHABLE_KEY }}
+          PUBLIC_GA_ID: ${{ secrets.PUBLIC_GA_ID }}
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
