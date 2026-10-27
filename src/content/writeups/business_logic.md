@@ -22,7 +22,7 @@ As expected, the application rejects our order because our available store credi
 
 ![Cart Request](/images/Request.png)
 If you study the request carefully an interesting question comes to mind **What would happen if we changed the quantity to a negative number?** There's only one way to find out!
-[burp negative request](/images/neg+quantity.png)
+![burp negative request](/images/neg+quantity.png)
 ![neq+req+result](/images/neq+req+res.png)
 As shown above, the application accepts the negative quantity and recalculates the cart total, reducing the overall cost of the order. This suggests that the application does not properly validate the quantity supplied by the user. By providing a negative quantity, we can manipulate the cart's total value.
 Next, we'll clear the cart, add the leather jacket again, and include another product whose quantity we can manipulate to reduce the total cost of the order.
